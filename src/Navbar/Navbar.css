@@ -1,0 +1,45 @@
+.navbar {
+    background: rgba(19, 0, 64, 1);
+}
+
+.header_content {
+    font-family: Poppins;
+    font-size: 36px;
+    font-weight: 400;
+    line-height: 54px;
+    letter-spacing: 0em;
+    text-align: left;
+    cursor: pointer;
+}
+
+.header_content_one {
+    font-family: Poppins;
+    font-size: 1rem;
+    font-weight: 400;
+    line-height: 27px;
+    letter-spacing: 0em;
+    text-decoration: none;
+}
+
+.join_button {
+    width: 170px;
+    height: 49px;
+    border-radius: 5px;
+    border: none;
+}
+
+.join_name {
+    font-family: Poppins;
+    font-size: 17px;
+    font-weight: 600;
+    line-height: 26px;
+    letter-spacing: 0em;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.nav-link:hover {
+    color: #d0126c;
+    border-bottom: 1px solid white;
+}

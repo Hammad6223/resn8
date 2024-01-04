@@ -1,0 +1,61 @@
+.project_style {
+    font-family: Poppins;
+    font-size: 69px;
+    font-weight: 400;
+    line-height: 104px;
+    letter-spacing: 0em;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.project_detail {
+    font-family: Poppins;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 20px;
+    letter-spacing: 0em;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.line_style {
+    border-bottom: 1px solid white;
+    margin-top: 80px;
+    display: flex;
+    width: 80%;
+}
+
+.footer_input {
+    background: none;
+    border: none;
+    padding-top: 10px;
+    padding-left: 5px;
+    width: 100%;
+}
+
+.curve_style {
+    width: 27%;
+    height: 45px;
+    border-top-left-radius: 8px;
+    border-top-right-radius: 8px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.voice_style {
+    font-family: Poppins;
+    font-size: 15px;
+    font-weight: 400;
+    line-height: 23px;
+}
+
+.for_talent {
+    font-family: Poppins;
+    font-size: 17px;
+    font-weight: 600;
+    line-height: 26px;
+}

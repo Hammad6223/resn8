@@ -1,0 +1,46 @@
+.browse_name {
+    font-family: Poppins;
+    font-size: 41px;
+    font-weight: 700;
+    line-height: 64px;
+    letter-spacing: 0.01em;
+}
+
+.explore_name {
+    font-family: Poppins;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 25px;
+    letter-spacing: 0.01em;
+    width: 100%;
+}
+
+.card {
+    background: none;
+    border: none;
+    width: 80%;
+}
+
+.claming_box {
+    height: 70px;
+    border-bottom-right-radius: 19px;
+    border-bottom-left-radius: 19px;
+}
+
+.claming_name {
+    font-family: Poppins;
+    font-size: 20px;
+    font-weight: 600;
+    line-height: 22px;
+    letter-spacing: 0em;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.explore_btn {
+    width: 55%;
+    height: 40px;
+    border-radius: 4px;
+    border: none;
+}
