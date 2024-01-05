@@ -24,12 +24,12 @@ export const Trending = () => {
                 <div className="container">
                     <div className="row">
                         <div className="col">
-                            <div className='trending_styling' style={{ color: colors.whiteColor }}>
+                            <div className='trending_styling'>
                                 Trending Categories
                             </div>
                         </div>
                         <div className="col d-flex justify-content-end pt-3">
-                            <div className='view_styling' style={{ color: colors.primaryColor }}>
+                            <div className='view_styling'>
                                 View All
                                 <FaLongArrowAltRight />
                             </div>
@@ -39,7 +39,7 @@ export const Trending = () => {
                         {data.map((item, index) => (
                             <div className={`${index === 1 ? 'col-md-8' : 'col-md-4'} p-2`} key={index} style={{position: "relative"}}>
                                 <img src={item.image} alt="" style={{width:'100%'}}/>
-                                <div className={`${index === 1 ? 'card-image2' : 'card-image'}`} style={{color: colors.whiteColor}}>
+                                <div className={`${index === 1 ? 'card_image2' : 'card_image'}`} style={{color: colors.whiteColor}}>
                                     <p className='trending_title'> {item.title}</p>
                                     <p className='trending_des'> {item.des}</p>
                                 </div>

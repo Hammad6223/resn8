@@ -1,9 +1,22 @@
+@import url('../../../App.css');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.browse_bg{
+    background: var(--blackColor);
+}
+
 .browse_name {
     font-family: Poppins;
     font-size: 41px;
     font-weight: 700;
     line-height: 64px;
     letter-spacing: 0.01em;
+    color: var(--whiteColor);
 }
 
 .explore_name {
@@ -12,7 +25,7 @@
     font-weight: 400;
     line-height: 25px;
     letter-spacing: 0.01em;
-    width: 100%;
+    color: var(--greyColor);
 }
 
 .card {
@@ -25,6 +38,7 @@
     height: 70px;
     border-bottom-right-radius: 19px;
     border-bottom-left-radius: 19px;
+    background: var(--darkColor);
 }
 
 .claming_name {
@@ -36,6 +50,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
+    color: var(--whiteColor);
 }
 
 .explore_btn {
@@ -43,4 +58,6 @@
     height: 40px;
     border-radius: 4px;
     border: none;
+    background: var(--primaryColor);
+    color: var(--whiteColor);
 }

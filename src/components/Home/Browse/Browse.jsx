@@ -18,19 +18,19 @@ export const Browse = () => {
         { image: Image_five, text: "Sultry" },
         { image: Image_six, text: "Friendly" },
         { image: Image_seven, text: "Whimsical" },
-        { btn: <button className='explore_btn' style={{ background: colors.primaryColor, color: colors.whiteColor }}>Explore Now</button> }
+        { btn: <button className='explore_btn'>Explore Now</button> }
     ];
 
     return (
         <>
-            <div className="container-fluid pt-5 pb-5" style={{ background: colors.blackColor }}>
+            <div className="container-fluid browse_bg pt-5 pb-5">
                 <div className="container">
                     <div className="row">
                         <div className="col-xxl-6 col-xl-6 col-lg-5 col-md-4 col-sm-5 col-12 ps-5">
-                            <p className='browse_name' style={{ color: colors.whiteColor }}>Browse Voices by <br /> Tone</p>
+                            <p className='browse_name'>Browse Voices by <br /> Tone</p>
                         </div>
                         <div className="col-xxl-6 col-xl-6 col-lg-7 col-md-8 col-sm-7 col-12 ps-5">
-                            <p className='explore_name' style={{ color: colors.greyColor }}>
+                            <p className='explore_name'>
                                 Explore a vast array of voices, each carefully curated to strike
                                 the perfect tone that resonates seamlessly with your diverse audiences.
                                 With our extensive database, you can search through hundreds of voices,
@@ -51,8 +51,8 @@ export const Browse = () => {
                                             <div className="col-xxl-3 col-xl-3 col-lg-4 col-md-4 col-sm-6 mt-4 d-flex justify-content-center" key={index}>
                                                 <div className="card">
                                                     <img src={item.image} className="card-img-top" alt="..." />
-                                                    <div className="card-body claming_box" style={{ background: colors.darkColor }}>
-                                                        <p className="card-title claming_name" style={{ color: colors.whiteColor }}>{item.text}</p>
+                                                    <div className="card-body claming_box">
+                                                        <p className="card-title claming_name">{item.text}</p>
                                                     </div>
                                                 </div>
                                             </div>

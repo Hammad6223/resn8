@@ -1,13 +1,8 @@
+@import url('../../App.css');
+
 * {
     padding: 0;
     margin: 0;
-}
-
-.bg_sign_img {
-    width: 100%;
-    background-image: url('../../assets/images/BG.png');
-    background-repeat: no-repeat;
-    background-size: cover;
 }
 
 .sign_box {
@@ -31,6 +26,7 @@
     padding-top: 30px;
     display: flex;
     justify-content: center;
+    color: var(--whiteColor);
 }
 
 .custom-dropdown {
@@ -42,28 +38,12 @@
 .style_input {
     appearance: none;
     width: 100%;
-    height: 40px;
+    height: 42px;
     border-radius: 8px;
     background: #1f1c2e;
     margin-top: 5px;
     padding-left: 10px;
-}
-
-.style_s_input {
-    width: 100%;
-    height: 55px;
-    padding-top: 8px;
-    padding-bottom: 10px;
-    padding-left: 15px;
-    border-radius: 8px;
-    background: #1f1c2e;
-    margin-top: 5px;
-}
-
-.style_f_input{
-    border: none;
-    background: none;
-    width: 99%;
+    color: var(--whiteColor);
 }
 
 .dropdown-icon {
@@ -72,15 +52,7 @@
     right: 20px;
     transform: translateY(-50%);
     pointer-events: none;
-}
-
-.toggle-password {
-    position: absolute;
-    top: 32%;
-    right: 20px;
-    transform: translateY(-50%);
-    cursor: pointer;
-    user-select: none;
+    color: var(--whiteColor);
 }
 
 .checkbox-label {
@@ -91,6 +63,7 @@
 
 .check-icon {
     margin-right: 8px;
+    color: var(--whiteColor);
 }
 
 input[type='checkbox']+.check-icon {
@@ -106,47 +79,7 @@ input[type='checkbox']+.check-icon {
     letter-spacing: 0.005em;
     text-align: center;
     margin-top: 7px;
-}
-
-.register_button {
-    width: 100%;
-    border-radius: 8px;
-    border: none;
-    margin-top: 20px;
-}
-
-.or_styling {
-    font-family: Poppins;
-    font-size: 15px;
-    font-weight: 400;
-    line-height: 23px;
-    letter-spacing: 0em;
-    text-align: left;
-}
-
-.facebook_button {
-    width: 100%;
-    border-radius: 8px;
-    border: none;
-    margin-top: 20px;
-}
-
-.fb_styling {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 20px;
-    padding-top: 14px;
-    padding-bottom: 14px;
-}
-
-.signfacebook_styling {
-    font-family: Poppins;
-    font-size: 16px;
-    font-weight: 600;
-    line-height: 19px;
-    letter-spacing: 0.005em;
-    text-align: center;
+    color: var(--whiteColor);
 }
 
 .project_name {
@@ -159,13 +92,5 @@ input[type='checkbox']+.check-icon {
     display: flex;
     justify-content: center;
     margin-top: 15px;
-}
-
-.acount_styling {
-    font-family: Poppins;
-    font-size: 16px;
-    font-weight: 400;
-    line-height: 19px;
-    letter-spacing: 0.005em;
-    text-align: left;
+    color: var(--whiteColor);
 }

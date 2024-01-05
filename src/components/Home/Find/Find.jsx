@@ -13,7 +13,7 @@ export const Find = () => {
                 <div className="container">
                     <div className="row">
                         <div className="col">
-                            <p className='trending_name' style={{ color: colors.whiteColor }}>Trending Voices</p>
+                            <p className='trending_name'>Trending Voices</p>
                         </div>
                     </div>
                     <div className="row">
@@ -28,19 +28,19 @@ export const Find = () => {
                             <img src={Image} alt="" style={{ width: "100%" }} />
                         </div>
                         <div className="col-xxl-5 col-xl-5 col-lg-5 col-md-5 col-sm-5">
-                            <p className='hire_name' style={{ color: colors.whiteColor }}>Find & Hire Your <br /> Favorite Voice Talent</p>
-                            <p className='search_name' style={{color: colors.greyColor}}>Search our extensive database of real talent, with real <br /> voices that resonate with your diverse audience.</p>
+                            <p className='hire_name'>Find & Hire Your <br /> Favorite Voice Talent</p>
+                            <p className='search_name'>Search our extensive database of real talent, with real <br /> voices that resonate with your diverse audience.</p>
                             <div className="row mt-4">
                                 <div className="col-3">
                                     <img src={People} alt="" style={{ width: "100%" }} />
                                 </div>
                                 <div className="col-7">
-                                    <p className='voice_name mb-0 pt-2' style={{ color: colors.whiteColor }}>100+ Voices <span style={{ color: colors.primaryColor }}>Learn More</span> </p>
+                                    <p className='voice_name mb-0 pt-2'>100+ Voices <span style={{ color: colors.primaryColor }}>Learn More</span> </p>
                                 </div>
                             </div>
                             <div>
-                                <button className='find_btn mt-4' style={{background: colors.primaryColor}}>
-                                    <div className='find_btn_name' style={{color: colors.whiteColor}}>Find Now</div>
+                                <button className='find_btn mt-4'>
+                                    Find Now
                                 </button>
                             </div>
                         </div>

@@ -17,10 +17,10 @@ export const Capture = () => {
 
     // Array of objects representing icon components and associated text
     const iconsData = [
-        { icon: <FaMicrosoft className='micro_logo_style' style={{color: colors.greyColor}}/>, text: 'Microsoft' },
-        { icon: <FaAirbnb className='micro_logo_style' style={{color: colors.greyColor}}/>, text: 'Airbnb' },
-        { icon: <SiGodaddy className='micro_logo_style' style={{color: colors.greyColor}}/>, text: 'GoDaddy' },
-        { icon: <FaAirbnb className='micro_logo_style' style={{color: colors.greyColor}}/>, text: 'Airbnb' }
+        { icon: <FaMicrosoft className='micro_logo_style' />, text: 'Microsoft' },
+        { icon: <FaAirbnb className='micro_logo_style' />, text: 'Airbnb' },
+        { icon: <SiGodaddy className='micro_logo_style' />, text: 'GoDaddy' },
+        { icon: <FaAirbnb className='micro_logo_style' />, text: 'Airbnb' }
     ];
 
     return (
@@ -30,33 +30,34 @@ export const Capture = () => {
                     <div className="container">
                         <div className="row">
                             <div className="col-xxl-7 col-xl-7 col-lg-6 col-md-6 col-sm-12 col-12">
-                                <div className='landing_heading' style={{color: colors.whiteColor}}>
+                                <div className='landing_heading'>
                                     Find The Right Voice For Your Target Audience
                                 </div>
                                 <div className='dots_styling'>
                                     <img src={Dots} alt="" />
                                 </div>
-                                <div style={{ marginTop: "10px", display: "flex", width: "100%" }}>
+                                <div className='d-flex'>
                                     <div style={{ width: "75%" }}>
                                         <form action="">
                                             <input type="text" placeholder="I’m looking for..." className='input_styling' />
                                         </form>
                                     </div>
                                     <div style={{ width: "20%" }}>
-                                        <button className='search_btn' style={{background: colors.primaryColor}}>
-                                            <div className='search_btn_name' style={{color: colors.whiteColor}}>Search</div></button>
+                                        <button className='search_btn'>
+                                            Search
+                                        </button>
                                     </div>
                                 </div>
-                                <span className='comment_styling' style={{color: colors.greyColor}}>Ex: I'm looking for a cheerful, adult male voice, with a southern accent...</span>
+                                <span className='comment_styling'>Ex: I'm looking for a cheerful, adult male voice, with a southern accent...</span>
                             </div>
                             <div className="col-xxl-5 col-xl-5 col-lg-6 col-md-6 col-sm-12 col-12">
-                                <div style={{ position: 'relative' }}>
+                                <div className='position-relative'>
                                     <img src={Rectangle} alt="" className='rect_position' />
-                                    <div style={{ position: "relative", textAlign: "center" }}>
+                                    <div className='position-relative text-center'>
                                         <img src={Vector} alt="" className='vector_img' />
                                         <div className='img_position'>
                                             <img src={Play} alt="" className='play_img' />
-                                            <span className='play_name' style={{color: colors.whiteColor}}>How it works?</span>
+                                            <span className='play_name'>How it works?</span>
                                         </div>
                                     </div>
                                 </div>
@@ -64,12 +65,12 @@ export const Capture = () => {
                         </div>
                         <div className="row mt-5">
                             <div className="col-md-7">
-                                <p className='trusted_styling' style={{color: colors.primaryColor}}>Trusted by</p>
+                                <p className='trusted_styling'>Trusted by</p>
                                 <div className="d-flex flex-wrap gap-3">
                                     {iconsData.map((item, index) => (
                                         <div key={index}>
                                             {item.icon}
-                                            <span className='micro_styling' style={{color: colors.greyColor}}>{item.text}</span>
+                                            <span className='micro_styling'>{item.text}</span>
                                         </div>
                                     ))}
                                 </div>

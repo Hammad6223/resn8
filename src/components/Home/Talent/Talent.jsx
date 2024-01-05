@@ -24,25 +24,22 @@ export const Talent = () => {
                                 <div className="row h-100">
                                     <div className="col-xxl-4 col-xl-4 col-lg-3 col-md-3">
                                         <img src={Wing} alt="" className='img_style' />
-
                                     </div>
-                                    <div className="col-xxl-4 col-xl-4 col-lg-4 col-md-5 col-sm-7 col-12 d-flex justify-content-center align-items-center talent_styling" style={{ color: colors.whiteColor }}>
+                                    <div className="col-xxl-4 col-xl-4 col-lg-4 col-md-5 col-sm-7 col-12 d-flex justify-content-center align-items-center talent_styling">
                                         Become a Talent, Empower your Voice.
                                     </div>
                                     <div className="col-xxl-4 col-xl-4 col-lg-5 col-md-4 col-sm-5 col-12 d-flex justify-content-center align-items-center flex-column">
                                         <div className="row white_circle">
-                                            <div className='col-3 p-0 border_styling' style={{ background: colors.whiteColor }}>
+                                            <div className='col-3 p-0 border_styling'>
                                                 <FaHeadphonesAlt style={{ fontSize: "40px" }} />
                                             </div>
                                             <div className='col p-0 d-flex justify-content-center align-items-center'>
-                                                <p className='explore_styling' style={{ color: colors.whiteColor, marginBottom: "0px" }}>Explore Voices</p>
+                                                <div className='explore_styling'>Explore Voices</div>
                                             </div>
                                         </div>
                                         <div className="d-flex w-100 mt-3 justify-content-center">
-                                            <button className='learn_btn' style={{ background: colors.primaryColor }}>
-                                                <div className='learn_name' style={{ color: colors.whiteColor }}>
+                                            <button className='learn_btn'>
                                                     Learn more
-                                                </div>
                                             </button>
                                         </div>
                                     </div>

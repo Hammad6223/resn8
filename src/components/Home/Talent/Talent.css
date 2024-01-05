@@ -1,3 +1,11 @@
+@import url('../../../App.css');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
 .circle_styling {
     width: 100%;
     height: 310px;
@@ -56,6 +64,7 @@
     font-weight: 600;
     line-height: 68px;
     letter-spacing: 0em;
+    color: var(--whiteColor);
 }
 
 @media (max-width: 576px) {
@@ -83,6 +92,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
+    background: var(--whiteColor);
 }
 
 .explore_styling {
@@ -91,6 +101,7 @@
     font-weight: 600;
     line-height: 30px;
     letter-spacing: 0em;
+    color: var(--whiteColor);
 }
 
 .learn_btn {
@@ -98,14 +109,13 @@
     height: 64px;
     border-radius: 6px;
     border: none;
-}
-
-.learn_name {
+    background: var(--primaryColor);
     font-family: Poppins;
     font-size: 20px;
     font-weight: 600;
     line-height: 30px;
     letter-spacing: 0em;
+    color: var(--whiteColor);
 }
 
 .img_styling {

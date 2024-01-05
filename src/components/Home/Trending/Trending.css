@@ -1,9 +1,18 @@
+@import url('../../../App.css');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
 .trending_styling {
     font-family: Poppins;
     font-size: 41px;
     font-weight: 700;
     line-height: 51px;
     letter-spacing: 0em;
+    color: var(--whiteColor);
 }
 
 .view_styling {
@@ -13,22 +22,25 @@
     line-height: 24px;
     letter-spacing: 0em;
     cursor: pointer;
+    color: var(--primaryColor);
 }
 
-.card-image {
+.card_image {
     position: absolute;
     bottom: 8px;
     width: 96.2%;
     background-color: rgba(0, 0, 0, 0.5);
     padding: 20px;
+    color: var(--whiteColor);
 }
 
-.card-image2 {
+.card_image2 {
     position: absolute;
     bottom: 8px;
     width: 98.2%;
     background-color: rgba(0, 0, 0, 0.5);
     padding: 20px;
+    color: var(--whiteColor);
 }
 
 .trending_title {

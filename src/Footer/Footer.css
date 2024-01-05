@@ -1,3 +1,15 @@
+@import url('../App.css');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.footer_bg{
+    background: var(--blackColor);
+}
+
 .project_style {
     font-family: Poppins;
     font-size: 69px;
@@ -7,6 +19,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
+    color: var(--whiteColor);
 }
 
 .project_detail {
@@ -19,6 +32,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
+    color: var(--whiteColor);
 }
 
 .line_style {
@@ -34,6 +48,7 @@
     padding-top: 10px;
     padding-left: 5px;
     width: 100%;
+    color: var(--whiteColor);
 }
 
 .curve_style {
@@ -44,6 +59,12 @@
     display: flex;
     justify-content: center;
     align-items: center;
+    cursor: pointer;
+    background: var(--primaryColor);
+}
+
+.curve_icon{
+    color: var(--whiteColor);
 }
 
 .voice_style {
@@ -51,6 +72,8 @@
     font-size: 15px;
     font-weight: 400;
     line-height: 23px;
+    cursor: pointer;
+    color: var(--whiteColor);
 }
 
 .for_talent {
@@ -58,4 +81,15 @@
     font-size: 17px;
     font-weight: 600;
     line-height: 26px;
+    color: var(--whiteColor);
+}
+
+.copyright_icon{
+    color: var(--whiteColor);
+    font-size: 20px;
+}
+
+.multiple_icons{
+    color: var(--whiteColor);
+    font-size: 20px;
 }

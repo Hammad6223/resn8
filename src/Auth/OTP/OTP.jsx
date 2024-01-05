@@ -1,45 +1,52 @@
-import { useState, useEffect } from "react"
+import React, { useState } from 'react';
 import { useNavigate } from "react-router-dom";
 import './OTP.css'
-import { IoCloseCircle } from "react-icons/io5";
 import 'bootstrap/dist/js/bootstrap.bundle.min.js';
 import colors from "../../Constant/Colors/colors";
+import { IoCloseCircle } from 'react-icons/io5';
 
 export const OTP = () => {
-
-  const navigate = useNavigate()
-
-  const confirmbtn = () => {
-    alert(`Confirm`)
-  }
+  const [showModal, setShowModal] = useState(false);
+  const navigate = useNavigate();
 
   return (
     <>
-      <div className="modal fade" id="exampleModalToggle" aria-hidden="true" aria-labelledby="exampleModalToggleLabel" data-bs-backdrop="static" data-bs-keyboard="false">
-        <div className="modal-dialog modal-dialog-centered" style={{ display: "flex", justifyContent: "center", alignItems: "center" }}>
-          <div className="otp_modal-content">
-            <div className="inner_otp_dialog_box">
-              <div style={{ display: "flex", paddingTop: "10px", gap: "130px" }}>
-                <div className="otp_styling" style={{ color: colors.whiteColor }}>
-                  OTP Verification
+      <button className='signin_button' onClick={() => setShowModal(true)}>Register</button>
+      {showModal && (
+        <div className="modal fade show" tabIndex="-1" >
+          <div className="modal-dialog modal-dialog-centered">
+            <div className="modal-content otp_modal-content">
+              <div className="inner_otp_dialog_box">
+                <div className='d-flex pt-2 gap-5'>
+                  <div className="forgetP_styling">
+                    OTP Verification
+                  </div>
+                  <button
+                    type="button"
+                    className="btn-close"
+                    onClick={() => setShowModal(false)}
+                    aria-label="Close"
+                  >
+                    <IoCloseCircle className='btn_close_icon' />
+                  </button>
                 </div>
-                <button type="button" className="btn-close" data-bs-dismiss="modal" aria-label="Close">
-                  <IoCloseCircle style={{ color: colors.primaryColor, fontSize: "22px" }} />
+                <p className="forget_content">
+                  Enter the 6 digit code sent to <br /> your phone at +1 234 56789
+                </p>
+                <form action="">
+                  <input type="text" placeholder='Enter code' className='otp_style_input' />
+                </form>
+                <p className="forget_content">
+                  Didn't receive the OTP? <u style={{ fontWeight: 'bold' }}>Resend OTP</u>
+                </p>
+                <button className='forget_button mt-4' onClick={() => navigate('/landing')}>
+                  Confirm
                 </button>
               </div>
-              <p className="otp_content" style={{ color: colors.whiteColor }}>Enter the 6 digit code sent to <br /> your phone at +1 234 56789</p>
-              <form action="">
-                <input type="number" placeholder='Enter code' className='otp_style_input' style={{ color: colors.whiteColor }} />
-              </form>
-              <p className="otp_content_one" style={{ color: colors.whiteColor }}>Didn't receive the OTP? <u style={{ fontWeight: "bold" }}>Resend OTP</u> </p>
-              <button className='confirm_button' style={{ background: colors.primaryColor }} onClick={confirmbtn}>
-                <div className='confirm_name' style={{ color: colors.whiteColor }}>Confirm</div>
-              </button>
             </div>
           </div>
         </div>
-      </div>
-      <a className='reg_name' data-bs-toggle="modal" href="#exampleModalToggle" role="button" style={{ color: colors.whiteColor }}>Register</a>
+      )}
     </>
-  )
-}
+  );
+};

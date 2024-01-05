@@ -1,3 +1,11 @@
+@import url('../../../App.css');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
 .price_style {
     font-family: Poppins;
     font-size: 55px;
@@ -7,6 +15,13 @@
     display: flex;
     justify-content: center;
     align-items: center;
+    color: var(--whiteColor);
+}
+
+.tick_icon {
+    color: var(--primaryColor);
+    /* padding-top: 5px; */
+    font-size: 25px;
 }
 
 .upgrade_style {
@@ -19,4 +34,156 @@
     justify-content: center;
     align-items: center;
     text-align: center;
+    color: var(--greyColor);
 }
+
+.card {
+    background-color: #1D1D33;
+    width: 80%;
+    border-radius: 17px;
+}
+
+.pro_style {
+    font-family: Poppins;
+    font-size: 24px;
+    font-weight: 400;
+    line-height: 37px;
+    letter-spacing: 0em;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: var(--greyColor);
+}
+
+.per_style {
+    font-family: Poppins;
+    font-size: 26px;
+    font-weight: 700;
+    line-height: 41px;
+    letter-spacing: 0em;
+    color: var(--whiteColor);
+}
+
+.per_btn {
+    width: 70%;
+    border: none;
+    border-radius: 5px;
+    background: var(--primaryColor);
+    color: var(--whiteColor);
+}
+
+.voice_p_style {
+    font-family: Poppins;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 25px;
+    letter-spacing: 0em;
+    color: #FFFFFF99;
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+}
+
+.grp_icon {
+    font-size: 20px;
+}
+
+.line_p_style {
+    width: 100%;
+    height: 3px;
+    border-radius: 2px;
+    background: #303143;
+}
+
+.box_p_style {
+    width: 100%;
+    height: 27px;
+    background: #303143;
+    border-radius: 12px;
+}
+
+.monthly_p_style {
+    font-family: Poppins;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 25px;
+    letter-spacing: 0em;
+    color: #FFFFFF99;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.annually_btn {
+    width: 100%;
+    height: 23px;
+    border-radius: 11px;
+    border: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 2px;
+}
+
+.text_styling {
+    font-family: Poppins;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 36px;
+    letter-spacing: 0em;
+    color: var(--whiteColor);
+}
+
+
+.checkbox {
+    width: 223px;
+    height: 60px;
+    background-color: #d0d0d0;
+    border-radius: 30px;
+    position: relative;
+    color: black;
+    overflow: hidden;
+  }
+  
+  #checkbox_toggle {
+    display: none;
+  }
+  
+  .checkbox .toggle {
+    width: 100px;
+    height: 50px;
+    position: absolute;
+    border-radius: 30px;
+    left: 5px;
+    cursor: pointer;
+    background: linear-gradient(40deg, #FF0080,#FF8C00 70%);
+    transition: 0.4s;
+    box-shadow: 0px 0px 3px rgb(255, 255, 20), 0px 0px 5px rgb(255, 255, 20);
+  }
+  
+  .checkbox .slide {
+    width: 230px;
+    height: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    cursor: pointer;
+  }
+  
+  .checkbox .slide .text {
+    font-size: 16px;
+    font-weight: 700;
+    z-index: 100;
+    cursor: pointer;
+  }
+  
+  .check:checked + .checkbox .slide .toggle {
+    transform: translateX(113px);
+    background: linear-gradient(40deg, #8983F7, #A3DAFB 70%);
+    box-shadow: -0px -0px 10px #8983F7, -0px -0px 3px #8983F7;
+  }
+  
+  .check:checked + .checkbox .slide {
+    background-color: #0a1929;
+    color: #fff;
+  }
