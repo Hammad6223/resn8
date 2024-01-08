@@ -1,11 +1,11 @@
 import React from 'react'
-import { Navbar } from '../Navbar/Navbar'
+import { Header } from '../Navbar/Header'
 import { Footer } from '../Footer/Footer'
 
-export const Layout = (props) => {
+export const Layoutone = (props) => {
   return (
     <div className={props.class}>
-      <Navbar />
+      <Header />
       {props.children}
       <Footer />
     </div>

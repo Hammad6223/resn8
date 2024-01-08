@@ -9,7 +9,6 @@ export const Navbar = () => {
   const navigate = useNavigate();
 
   return (
-    <>
       <nav className="navbar navbar-expand-lg">
         <div className="container">
           <span className='header_content' style={{color: colors.whiteColor}} onClick={() => navigate('/landing')}>Resn8</span>
@@ -22,7 +21,7 @@ export const Navbar = () => {
                 <NavLink className ="nav-link header_content_one" style={{color: colors.whiteColor}} to = "/capture">Capture Voice</NavLink>
               </li>
               <li className="nav-item">
-                <NavLink className="nav-link header_content_one" style={{color: colors.whiteColor}} to = "/capture">Find Talent</NavLink>
+                <NavLink className="nav-link header_content_one" style={{color: colors.whiteColor}} to = "/report">Find Talent</NavLink>
               </li>
               <li className="nav-item me-5">
                 <NavLink className="nav-link header_content_one" style={{color: colors.whiteColor}} to = "/signup">Sign in</NavLink>
@@ -36,6 +35,5 @@ export const Navbar = () => {
           </div>
           </div>
       </nav>
-    </>
   )
 }
