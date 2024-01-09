@@ -23,7 +23,7 @@ export const Price = () => {
           </div>
           <div className="row mt-5 justify-content-center">
             <div className="col-xxl-5 col-xl-6 col-lg-6 col-md-6">
-              <div className="card">
+              <div className="card card_price">
                 <div className="card-body position-relative">
                   <div className='pro_style mt-5'>For Pro Talent</div>
                   <div className="row justify-content-center mt-2">
@@ -90,7 +90,7 @@ export const Price = () => {
               </div>
             </div>
             <div className="col-xxl-5 col-xl-6 col-lg-6 col-md-6 ps-3 col2">
-              <div className="card">
+              <div className="card card_price">
                 <div className="card-body position-relative">
                   <div className='pro_style mt-5'>For Pro Talent</div>
                   <div className="row justify-content-center mt-2">

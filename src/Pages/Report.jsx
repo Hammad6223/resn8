@@ -1,12 +1,15 @@
 import React from 'react'
 import {Layoutone} from '../layout/Layoutone'
-import { Dashboard } from '../components/Report/Dashboard/Dashboard'
+import { Sidebar } from '../Navbar/Sidebar'
 
 
 export const Report = () => {
     return (
-        <Layoutone>
-            <Dashboard />
-        </Layoutone>
+        <>
+        <Sidebar />
+        
+        </>
+        // <Layoutone>
+        // </Layoutone>
     )
 }

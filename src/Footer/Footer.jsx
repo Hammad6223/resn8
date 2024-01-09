@@ -1,6 +1,5 @@
 import React from 'react'
 import './Footer.css'
-import colors from '../Constant/Colors/colors'
 import line from '../assets/images/Line_one.png'
 import { IoIosArrowForward } from "react-icons/io";
 import { FaFacebookF, FaTwitter, FaInstagram, FaRegCopyright } from "react-icons/fa";
@@ -76,7 +75,7 @@ export const Footer = () => {
 
   return (
     <section>
-      <div className="container-fluid footer_bg pb-5">
+      <div className="container-fluid footer_bg pb-5" style={{background: "black"}}>
         <div className="container">
           <div className="row pt-4">
             <div className="col-md-12">
