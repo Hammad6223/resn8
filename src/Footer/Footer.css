@@ -6,8 +6,8 @@
     box-sizing: border-box;
 }
 
-.footer_bg{
-    background: black;
+.footer_BG{
+    background: var(--blackColor);
 }
 
 .project_style {

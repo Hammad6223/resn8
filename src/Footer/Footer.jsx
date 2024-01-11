@@ -75,7 +75,7 @@ export const Footer = () => {
 
   return (
     <section>
-      <div className="container-fluid footer_bg pb-5" style={{background: "black"}}>
+      <div className="container-fluid footer_BG pb-5">
         <div className="container">
           <div className="row pt-4">
             <div className="col-md-12">

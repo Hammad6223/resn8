@@ -30,7 +30,7 @@ export const Dashboard = () => {
     },
   ];
 
-  const datas = [
+  const data1 = [
     {
       icon: <BsPersonFillCheck className='grp_icon' />,
       title: 'Subscribed Customer',
@@ -50,119 +50,124 @@ export const Dashboard = () => {
     },
   ];
 
+  const data2 = [
+    {
+      title: 'Monthly Recurring Revenue (MRR)',
+      buttonLabel: 'Month',
+      amount: '$16,400.12',
+      percentage: '12.3%',
+      profits: {
+        label: 'Profit',
+        dotStyle: { background: '' },
+      },
+      losses: {
+        label: 'Loss',
+        dotStyle: { background: 'grey' },
+      },
+      ticks: ['20K', '15K', '10K', '5K', '0'],
+      months: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun'],
+    },
+  ];
+
   return (
     <section>
-      <div className="container-fluid">
-        <div className="row pt-5 ps-2 pe-2">
-          <div className="col-md-6">
-            <div className="row">
-              {data.map((item, index) => (
-                <div className="col-md-6" key={index}>
-                  <div className='dash_box1'>
-                    <div className='ps-4 pt-3'>
-                      <div className='d-flex gap-2'>
-                        <div className='dash_circle'>{item.icon}</div>
-                        <div className='total_d_style mt-1'>{item.title}</div>
-                      </div>
-                      <div className='text_d_style mt-2'>{item.amount}</div>
-                      <div className='text1_d_style d-flex gap-2 mt-2'>
-                        <MdArrowOutward />
-                        {item.percentage}
-                        <span className='color_d'>{item.change}</span>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              ))}
-            </div>
-            <div className="row mt-5">
-              {datas.map((item, index) => (
-                <div className="col-md-6" key={index}>
-                  <div className='dash_box1'>
-                    <div className='ps-4 pt-3'>
-                      <div className='d-flex gap-2'>
-                        <div className='dash_circle'>{item.icon}</div>
-                        <div className='total_d_style mt-1'>{item.title}</div>
-                      </div>
-                      <div className='text_d_style mt-2'>{item.amount}</div>
-                      <div className='text1_d_style d-flex gap-2 mt-2'>
-                        {item.arrowIcon}
-                        {item.percentage}
-                        <span className='color_d'>{item.change}</span>
+      <div className="container-fluid dashboard_bg">
+        <div className="container pt-5">
+          <div className="row">
+            <div className="col-xxl-6 col-xl-6 col-lg-6">
+              <div className="row">
+                {data.map((item, index) => (
+                  <div className="col-sm-6" key={index}>
+                    <div className='dash_box1'>
+                      <div className='ps-4 pt-3'>
+                        <div className='d-flex gap-2'>
+                          <div className='dash_circle'>{item.icon}</div>
+                          <div className='total_d_style mt-1'>{item.title}</div>
+                        </div>
+                        <div className='text_d_style mt-2'>{item.amount}</div>
+                        <div className='text1_d_style d-flex gap-2 mt-2'>
+                          <MdArrowOutward />
+                          {item.percentage}
+                          <span className='color_d'>{item.change}</span>
+                        </div>
                       </div>
                     </div>
                   </div>
-                </div>
-              ))}
-            </div>
-          </div>
-          <div className="col-md-6">
-            <div className='dash_box2'>
-              <div className='ps-4 pt-4'>
-                <div className='d-flex justify-content-between'>
-                  <div className='monthly_d_style'>
-                    Monthly Recurring Revenue (MRR)
-                  </div>
-                  <button className='month_btn_d me-4 d-flex gap-2'>
-                    Month<IoIosArrowDown />
-                  </button>
-                </div>
-                <div className='d-flex justify-content-between me-4 mt-3'>
-                  <div className='d-flex gap-3'>
-                    <div className='d2_style'>
-                      $16,400.12
-                    </div>
-                    <div className='d_circle_style mt-2'>
-                      <MdArrowOutward />
-                      12.3%
-                    </div>
-                  </div>
-                  <div className='d-flex gap-4'>
-                    <div className='d-flex gap-2'>
-                      <div className='dot_d_style mt-3' />
-                      <div className='p_d_style mt-2'>
-                        Profit
-                      </div>
-                    </div>
-                    <div className='d-flex gap-2'>
-                      <div className='dot_d_style mt-3' style={{ background: "grey" }} />
-                      <div className='p_d_style mt-2'>
-                        Loss
-                      </div>
-                    </div>
-                  </div>
-                </div>
-                <div className="row mt-4">
-                  <div className="col-1 d-flex flex-column gap-4 p-0">
-                    <div className='k_style'>
-                      20K
-                    </div>
-                    <div className='k_style'>
-                      15K
-                    </div>
-                    <div className='k_style'>
-                      10K
-                    </div>
-                    <div className='k_style'>
-                      5K
-                    </div>
-                    <div className='k_style'>
-                      0
-                    </div>
-                  </div>
-                  <div className="col-10 p-0 ps-4 pt-4">
-                    <img src={Progress} alt="" />
-                  </div>
-                </div>
-                <div className='d-flex gap-5 ps-5 mt-2'>
-                  <div className='k_style ps-4'>Jan</div>
-                  <div className='k_style ps-2'>Feb</div>
-                  <div className='k_style ps-2'>Mar</div>
-                  <div className='k_style ps-2'>Apr</div>
-                  <div className='k_style ps-2'>May</div>
-                  <div className='k_style ps-2'>Jun</div>
-                </div>
+                ))}
               </div>
+              <div className="row mt-3">
+                {data1.map((item, index) => (
+                  <div className="col-sm-6" key={index}>
+                    <div className='dash_box1'>
+                      <div className='ps-4 pt-3'>
+                        <div className='d-flex gap-2'>
+                          <div className='dash_circle'>{item.icon}</div>
+                          <div className='total_d_style mt-1'>{item.title}</div>
+                        </div>
+                        <div className='text_d_style mt-2'>{item.amount}</div>
+                        <div className='text1_d_style d-flex gap-2 mt-2'>
+                          {item.arrowIcon}
+                          {item.percentage}
+                          <span className='color_d'>{item.change}</span>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                ))}
+              </div>
+            </div>
+            <div className="col-xxl-6 col-xl-6 col-lg-6">
+              {data2.map((item, index) => (
+                <div className='dash_box2' key={index}>
+                  <div className='ps-4 pt-4'>
+                    <div className='row justify-content-between'>
+                      <div className='col-sm-7 col-12 monthly_d_style'>{item.title}</div>
+                      <button className='col-sm-4 col-12 month_btn_d me-4 d-flex gap-2'>
+                        {item.buttonLabel}<IoIosArrowDown />
+                      </button>
+                    </div>
+                    <div className='row mt-3'>
+                      <div className='col-sm-6'>
+                        <div className='d-flex gap-2'>
+                          <div className='d2_style'>{item.amount}</div>
+                          <div className='d_circle_style mt-2'>
+                            <MdArrowOutward />{item.percentage}
+                          </div>
+                        </div>
+                      </div>
+                      <div className='col-sm-6'>
+                        <div className='d-flex gap-5'>
+                          <div className='d-flex gap-2'>
+                            <div className='dot_d_style mt-3' style={item.profits.dotStyle} />
+                            <div className='p_d_style mt-2'>{item.profits.label}</div>
+                          </div>
+                          <div className='d-flex gap-2'>
+                            <div className='dot_d_style mt-3' style={item.losses.dotStyle} />
+                            <div className='p_d_style mt-2'>{item.losses.label}</div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div className="row mt-4">
+                      <div className="col-1 d-flex flex-column gap-4 p-0">
+                        {item.ticks.map((tick, idx) => (
+                          <div className='k_style' key={idx}>{tick}</div>
+                        ))}
+                      </div>
+                      <div className="col-10 p-0">
+                        <div className='img_div'>
+                          <img src={Progress} alt="" style={{ width: "100%" }} />
+                        </div>
+                      </div>
+                    </div>
+                    <div className='d-flex month mt-2'>
+                      {item.months.map((month, idx) => (
+                        <div className='k_style' key={idx}>{month}</div>
+                      ))}
+                    </div>
+                  </div>
+                </div>
+              ))}
             </div>
           </div>
         </div>

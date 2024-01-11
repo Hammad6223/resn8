@@ -8,7 +8,7 @@
 
 .sidebar {
     background: #0E0927;
-    height: 900px;
+    position: sticky;
 }
 
 .navbar {
@@ -32,14 +32,18 @@
     line-height: 19px;
     letter-spacing: 0em;
     color: var(--whiteColor);
-    width: 100%;
-    height: 41px;
-    border-top-right-radius: 20px;
-    border-bottom-right-radius: 20px;
-    background: var(--primaryColor);
     display: flex;
     align-items: center;
     border: none;
+    width: 95%;
+    height: 41px;
+    background: #0E0927;
+}
+
+.active {
+    border-top-right-radius: 20px;
+    border-bottom-right-radius: 20px;
+    background: var(--primaryColor); 
 }
 
 .join_H_button {

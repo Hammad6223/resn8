@@ -1,0 +1,58 @@
+@import url('../../../App.css');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.month_btn {
+    width: 50%;
+    height: 42px;
+    border-radius: 4px;
+    border: none;
+    background: var(--primaryColor);
+    font-family: Poppins;
+    font-size: 15px;
+    font-weight: 600;
+    line-height: 23px;
+    letter-spacing: 0em;
+    color: var(--whiteColor);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 3px;
+}
+
+.order_box {
+    width: 100%;
+    border-radius: 10px;
+    background: #0E0927;
+}
+.table{
+    border: 1px solid #1D1B2D;
+}
+
+#orderhistory_tablehead>th {
+    color: var(--whiteColor) !important;
+    background: #1D1B2D;
+    font-family: Poppins;
+    font-size: 18px;
+    font-weight: 600;
+    line-height: 27px;
+    letter-spacing: 0em;
+}
+
+
+#orderhistory_tablebody>tr>td,
+#orderhistory_tablebody>tr>th {
+  background: none !important;
+  font-family: Poppins;
+  font-size: 13px;
+  font-weight: 400;
+  line-height: 20px;
+  letter-spacing: 0em;
+  color: var(--whiteColor);
+  border-radius: 10px;
+  height: 60px;
+}
