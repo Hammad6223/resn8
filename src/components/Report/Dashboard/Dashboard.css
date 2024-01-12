@@ -9,11 +9,11 @@
 .dashboard_bg {
     background: #060317;
     padding-bottom: 200px;
+    z-index: 1;
 }
 
 .dash_box1 {
     width: 100%;
-    height: 150px;
     border-radius: 15px;
     background: #0E0927;
 }
@@ -70,7 +70,6 @@
 
 .dash_box2 {
     width: 100%;
-    height: 424px;
     background: #0E0927;
     border-radius: 15px;
 }

@@ -78,7 +78,7 @@ export const Dashboard = () => {
               <div className="row">
                 {data.map((item, index) => (
                   <div className="col-sm-6" key={index}>
-                    <div className='dash_box1'>
+                    <div className='dash_box1 pb-3'>
                       <div className='ps-4 pt-3'>
                         <div className='d-flex gap-2'>
                           <div className='dash_circle'>{item.icon}</div>
@@ -98,7 +98,7 @@ export const Dashboard = () => {
               <div className="row mt-3">
                 {data1.map((item, index) => (
                   <div className="col-sm-6" key={index}>
-                    <div className='dash_box1'>
+                    <div className='dash_box1 pb-3'>
                       <div className='ps-4 pt-3'>
                         <div className='d-flex gap-2'>
                           <div className='dash_circle'>{item.icon}</div>
@@ -118,7 +118,7 @@ export const Dashboard = () => {
             </div>
             <div className="col-xxl-6 col-xl-6 col-lg-6">
               {data2.map((item, index) => (
-                <div className='dash_box2' key={index}>
+                <div className='dash_box2 pb-3' key={index}>
                   <div className='ps-4 pt-4'>
                     <div className='row justify-content-between'>
                       <div className='col-sm-7 col-12 monthly_d_style'>{item.title}</div>

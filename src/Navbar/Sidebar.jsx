@@ -1,4 +1,5 @@
 import React, { useState } from 'react'
+import { useNavigate } from 'react-router-dom';
 import './Sidebar.css'
 import { Dashboard } from '../components/Report/Dashboard/Dashboard';
 import { FindTalent } from '../components/Report/FindTalent/FindTalent';
@@ -6,6 +7,8 @@ import { SaveProfile } from '../components/Report/SaveProfile/SaveProfile';
 import { OrderHistory } from '../components/Report/OrderHistory/OrderHistory';
 import { Payment } from '../components/Report/Payment/Payment';
 import { Setting } from '../components/Report/Settings&Privacy/Setting';
+import { CreateProfile } from '../components/Report/CreateProfile/CreateProfile';
+import { CustomSupport } from '../components/Report/CustomSupport/CustomSupport';
 import { IoReorderThreeOutline } from "react-icons/io5";
 import { FaCrown } from "react-icons/fa";
 import { GoBellFill } from "react-icons/go";
@@ -24,6 +27,8 @@ export const Sidebar = () => {
 
   const [activeTab, setActiveTab] = useState('dashboard');
 
+  const navigate = useNavigate();
+
   const handleTabChange = (tab) => {
     setActiveTab(tab);
   };
@@ -31,10 +36,10 @@ export const Sidebar = () => {
   return (
     <section>
       <div className="d-flex">
-        <div className="sidebar col-xl-2 navbar-expand-xl">
+        <div className="sidebar col-xl-2 navbar-expand-xl ">
           <div className="collapse navbar-collapse" id="collapsibleNavbar">
             <div className='w-100'>
-              <span className='header_content ps-4'>Resn8</span>
+              <span className='header_content ps-4' onClick={() => navigate('/landing')}>Resn8</span>
               <div className='mt-5 d-flex flex-column gap-3'>
                 <button
                   className={`dash_style d-flex gap-2 ps-4 ${activeTab === 'dashboard' ? 'active' : ''}`}
@@ -49,34 +54,36 @@ export const Sidebar = () => {
                   Find Talent
                 </button>
                 <button className={`dash_style d-flex gap-2 ps-4 ${activeTab === 'saveprofile' ? 'active' : ''}`}
-                onClick={() => handleTabChange('saveprofile')}>
+                  onClick={() => handleTabChange('saveprofile')}>
                   <IoPersonOutline />
                   Saved Profile
                 </button>
                 <button className={`dash_style d-flex gap-2 ps-4 ${activeTab === 'orderhistory' ? 'active' : ''}`}
-                onClick={() => handleTabChange('orderhistory')}>
+                  onClick={() => handleTabChange('orderhistory')}>
                   <PiNotepad />
                   Order History
                 </button>
                 <button className={`dash_style d-flex gap-2 ps-4 ${activeTab === 'payment' ? 'active' : ''}`}
-                onClick={() => handleTabChange('payment')}>
+                  onClick={() => handleTabChange('payment')}>
                   <PiHandCoins />
                   Payment
                 </button>
                 <button className={`dash_style d-flex gap-2 ps-4 ${activeTab === 'setting' ? 'active' : ''}`}
-                onClick={() => handleTabChange('setting')}>
+                  onClick={() => handleTabChange('setting')}>
                   <RiLockPasswordLine />
                   Settings & Privacy
                 </button>
-                <button className='dash_style d-flex gap-2 ps-4'>
+                <button className={`dash_style d-flex gap-2 ps-4 ${activeTab === 'profile' ? 'active' : ''}`}
+                  onClick={() => handleTabChange('profile')}>
                   <IoPersonOutline />
                   Create Profile
                 </button>
-                <button className='dash_style d-flex gap-2 ps-4'>
+                <button className={`dash_style d-flex gap-2 ps-4 ${activeTab === 'custom' ? 'active' : ''}`}
+                  onClick={() => handleTabChange('custom')}>
                   <LiaSmsSolid />
                   Customer Support
                 </button>
-                <button className='dash_style d-flex gap-2 ps-4' style={{marginTop: "100px"}}>
+                <button className='dash_style d-flex gap-2 ps-4' style={{ marginTop: "100px" }}>
                   <IoIosLogOut />
                   Logout
                 </button>
@@ -104,6 +111,8 @@ export const Sidebar = () => {
               {activeTab === 'orderhistory' && <OrderHistory />}
               {activeTab === 'payment' && <Payment />}
               {activeTab === 'setting' && <Setting />}
+              {activeTab === 'profile' && <CreateProfile />}
+              {activeTab === 'custom' && <CustomSupport />}
             </div>
           </div>
         </div>

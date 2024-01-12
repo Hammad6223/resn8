@@ -34,30 +34,24 @@ export const Setting = () => {
                                 <div className='ps-3 pe-3 pt-4'>
                                     <div className="row">
                                         <div className="col-md-6">
-                                            <div className='account_p_style'>
+                                            <label className='account_p_style'>
                                                 Old Password
-                                            </div>
-                                            <div className='input_p_box mt-2'>
-                                                <input type="password" placeholder='Enter Your Old Password' className='input_p_field ms-3' />
-                                            </div>
+                                            </label>
+                                            <input type="password" placeholder='Enter Your Old Password' className='input_p_box mt-2' />
                                         </div>
                                         <div className="col-md-6">
-                                            <div className='account_p_style'>
+                                            <label className='account_p_style'>
                                                 New Password
-                                            </div>
-                                            <div className='input_p_box mt-2'>
-                                                <input type="password" placeholder='Enter Your New Password' className='input_p_field ms-3' />
-                                            </div>
+                                            </label>
+                                            <input type="password" placeholder='Enter Your New Password' className='input_p_box mt-2' />
                                         </div>
                                     </div>
                                     <div className="row mt-4">
                                         <div className="col-md-6">
-                                            <div className='account_p_style'>
+                                            <label className='account_p_style'>
                                                 Confirm
-                                            </div>
-                                            <div className='input_p_box mt-2'>
-                                                <input type="password" placeholder='Enter Your Confirm Password' className='input_p_field ms-3' />
-                                            </div>
+                                            </label>
+                                            <input type="password" placeholder='Enter Your Confirm Password' className='input_p_box mt-2' />
                                         </div>
                                     </div>
                                 </div>
@@ -77,48 +71,38 @@ export const Setting = () => {
                                 <div className='ps-3 pe-3 pt-4'>
                                     <div className="row">
                                         <div className="col-md-6">
-                                            <div className='account_p_style'>
+                                            <label className='account_p_style'>
                                                 Name
-                                            </div>
-                                            <div className='input_p_box mt-2'>
-                                                <input type="text" placeholder='Enter Your Name' className='input_p_field ms-3' />
-                                            </div>
+                                            </label>
+                                            <input type="text" placeholder='Enter Your Name' className='input_p_box mt-2' />
                                         </div>
                                         <div className="col-md-6">
-                                            <div className='account_p_style'>
+                                            <label className='account_p_style'>
                                                 Email
-                                            </div>
-                                            <div className='input_p_box mt-2'>
-                                                <input type="text" placeholder='Select Your Email' className='input_p_field ms-3' />
-                                            </div>
+                                            </label>
+                                            <input type="text" placeholder='Select Your Email' className='input_p_box mt-2' />
                                         </div>
                                     </div>
                                     <div className="row mt-4">
                                         <div className="col-md-6">
-                                            <div className='account_p_style'>
+                                            <label className='account_p_style'>
                                                 Phone Number
-                                            </div>
-                                            <div className='input_p_box mt-2'>
-                                                <input type="number" placeholder='Select Your Number' className='input_p_field ms-3' />
-                                            </div>
+                                            </label>
+                                            <input type="number" placeholder='Select Your Number' className='input_p_box mt-2' />
                                         </div>
                                         <div className="col-md-6">
-                                            <div className='account_p_style'>
+                                            <label className='account_p_style'>
                                                 Company Name
-                                            </div>
-                                            <div className='input_p_box mt-2'>
-                                                <input type="text" placeholder='Enter Your Company Name' className='input_p_field ms-3' />
-                                            </div>
+                                            </label>
+                                            <input type="text" placeholder='Enter Your Company Name' className='input_p_box mt-2' />
                                         </div>
                                     </div>
                                     <div className="row mt-4">
                                         <div className="col-md-6">
-                                            <div className='account_p_style'>
+                                            <label className='account_p_style'>
                                                 Company Role
-                                            </div>
-                                            <div className='input_p_box mt-2'>
-                                                <input type="text" placeholder='Enter Your Company Role' className='input_p_field ms-3' />
-                                            </div>
+                                            </label>
+                                            <input type="text" placeholder='Enter Your Company Role' className='input_p_box mt-2' />
                                         </div>
                                     </div>
                                 </div>

@@ -22,11 +22,9 @@
     border: 1px;
     display: flex;
     align-items: center;
-}
-.input_p_field{
-    background: none;
+    padding-left: 15px;
     border: none;
-    width: 88%;
+    width: 100%;
     color: var(--whiteColor);
 }
 
@@ -37,9 +35,20 @@
 
 .payment_btn{
     width: 13%;
+    min-width: 130px; /* Set a minimum width for the button */
     height: 42px;
     border-radius: 4px;
     background: var(--primaryColor);
     color: var(--whiteColor);
     border: none;
+}
+
+.icon_card {
+    position: absolute;
+    top: 50%;
+    right: 20px;
+    transform: translateY(-50%);
+    cursor: pointer;
+    user-select: none;
+    color: var(--primaryColor);
 }
