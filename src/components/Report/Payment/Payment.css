@@ -52,3 +52,25 @@
     user-select: none;
     color: var(--primaryColor);
 }
+
+@media (min-width: 576px) and (max-width: 768px) {
+    .CVC {
+        margin-top: 1rem;
+    }
+
+    .ZIP {
+        margin-top: 1rem;
+    }
+
+}
+
+@media (max-width: 576px) {
+    .CVC {
+        margin-top: 1rem;
+    }
+
+    .ZIP {
+        margin-top: 1rem;
+    }
+
+}

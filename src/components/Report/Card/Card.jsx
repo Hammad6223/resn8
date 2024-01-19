@@ -2,15 +2,7 @@ import React from 'react'
 import Images from '../../../assets/images/card.png'
 import Tick from '../../../assets/images/Vector01.png'
 import Play from '../../../assets/images/Play.png'
-import { AiFillInstagram } from "react-icons/ai";
-import { FaYoutube } from "react-icons/fa";
-import { FaTwitter } from "react-icons/fa";
-import { FaTiktok } from "react-icons/fa";
-import { GrSave } from "react-icons/gr";
-import { IoMail } from "react-icons/io5";
-import { IoIosArrowDropleftCircle } from "react-icons/io";
-import { IoIosArrowDroprightCircle } from "react-icons/io";
-
+import { icons } from '../../../Constant/Icons/Icons';
 
 export const Card = () => {
 
@@ -20,10 +12,10 @@ export const Card = () => {
             price: '$900',
             completedOrders: '249 Completed Orders',
             socialMedia: [
-                { icon: <AiFillInstagram style={{ color: 'white' }} />, platform: 'Instagram' },
-                { icon: <FaYoutube style={{ color: 'white' }} />, platform: 'Youtube' },
-                { icon: <FaTwitter style={{ color: 'white' }} />, platform: 'Twitter' },
-                { icon: <FaTiktok style={{ color: 'white' }} />, platform: 'Tiktok' }
+                { icon: <div className='d-flex justify-content-center align-item-center' style={{color: "white"}}>{icons.InstagramfillIcon}</div>, platform: 'Instagram' },
+                { icon: <div className='d-flex justify-content-center align-item-center' style={{color: "white"}}>{icons.YoutubefillIcon}</div>, platform: 'Youtube' },
+                { icon: <div className='d-flex justify-content-center align-item-center' style={{color: "white"}}>{icons.TwitterIcon}</div>, platform: 'Twitter' },
+                { icon: <div className='d-flex justify-content-center align-item-center' style={{color: "white"}}>{icons.TiktokfillIcon}</div>, platform: 'Tiktok' }
             ],
             language: 'English',
             gender: {
@@ -55,9 +47,9 @@ export const Card = () => {
                             <div className='position-relative'>
                                 <img src={Images} alt="..." style={{ width: "100%", paddingTop: "10px" }} />
                                 <div className='d-flex position-absolute img_position justify-content-between ps-2 pe-2'>
-                                    <IoIosArrowDropleftCircle className='circle_icon'/>
+                                    <div className='circle_icon'>{icons.ArrowDropleftCircle}</div>
                                     <img src={Play} alt="" style={{width: "20%"}} />
-                                    <IoIosArrowDroprightCircle className='circle_icon'/>
+                                    <div className='circle_icon'>{icons.ArrowDroprightCircle}</div>
                                 </div>
                             </div>
                             <div className='d-flex mt-2 gap-5'>
@@ -129,7 +121,7 @@ export const Card = () => {
                             </div>
                             <div className='d-flex gap-3 mt-3'>
                                 <div className='find_circles d-flex justify-content-center align-items-center'>
-                                    <GrSave style={{ color: "white" }} />
+                                   <div className='d-flex justify-content-center align-item-center' style={{color: "white"}}>{icons.SaveIcon}</div> 
                                 </div>
                                 <button className='gender_style clone_btn'>
                                     Clone Voice
@@ -137,7 +129,7 @@ export const Card = () => {
                             </div>
                             <div className='d-flex gap-3 mt-2'>
                                 <div className='find_circles d-flex justify-content-center align-items-center'>
-                                    <IoMail style={{ color: "white" }} />
+                                   <div className='d-flex justify-content-center align-item-center' style={{color: "white"}}>{icons.IoMailIcon}</div>
                                 </div>
                                 <button className='gender_style clone_btn'>
                                     Clone Voice

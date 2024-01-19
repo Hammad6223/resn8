@@ -5,3 +5,31 @@
     padding: 0;
     box-sizing: border-box;
 }
+
+@media (min-width: 576px) and (max-width: 768px) {
+    .New {
+        margin-top: 1rem;
+    }
+
+    .Email {
+        margin-top: 1rem;
+    }
+
+    .Company {
+        margin-top: 1rem;
+    }
+}
+
+@media (max-width: 576px) {
+    .New {
+        margin-top: 1rem;
+    }
+
+    .Email {
+        margin-top: 1rem;
+    }
+
+    .Company {
+        margin-top: 1rem;
+    }
+}

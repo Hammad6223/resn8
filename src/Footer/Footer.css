@@ -8,6 +8,13 @@
 
 .footer_BG{
     background: var(--blackColor);
+
+}
+
+.foot_BG{
+    background: var(--blackColor);
+    position: fixed;
+    bottom: 0;
 }
 
 .project_style {
@@ -87,9 +94,26 @@
 .copyright_icon{
     color: var(--whiteColor);
     font-size: 20px;
+    display: inline-block;
 }
 
 .multiple_icons{
     color: var(--whiteColor);
     font-size: 20px;
+    border: none;
+    background: none;
+}
+
+@media (min-width: 576px) and (max-width: 768px) {
+    .voice_style {
+        display: flex;
+        justify-content: center;
+    }
+}
+
+@media (max-width: 576px) {
+    .voice_style {
+        display: flex;
+        justify-content: center;
+    }
 }

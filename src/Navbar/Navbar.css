@@ -1,3 +1,11 @@
+@import url('../App.css');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
 .navbar {
     background: #060317;
 }
@@ -10,6 +18,7 @@
     letter-spacing: 0em;
     text-align: left;
     cursor: pointer;
+    color: var(--whiteColor);
 }
 
 .header_content_one {
@@ -19,6 +28,7 @@
     line-height: 27px;
     letter-spacing: 0em;
     text-decoration: none;
+    color: var(--whiteColor);
 }
 
 .join_button {
@@ -26,9 +36,7 @@
     height: 49px;
     border-radius: 5px;
     border: none;
-}
-
-.join_name {
+    background: var(--primaryColor);
     font-family: Poppins;
     font-size: 17px;
     font-weight: 600;
@@ -37,6 +45,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
+    color: var(--whiteColor);
 }
 
 .nav-link:hover {

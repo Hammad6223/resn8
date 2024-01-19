@@ -6,13 +6,18 @@
     box-sizing: border-box;
 }
 
-.sidebar {
+.navbar-sidebar {
     background: #0E0927;
-    z-index: 1;
 }
 
-.navbar {
+.sidebar {
     background: #0E0927;
+    /* position: sticky; */
+    /* top: 0; */
+}
+
+.sidebar_comp{
+    /* height: 100vh; */
 }
 
 .header_content {
@@ -43,7 +48,7 @@
 .active {
     border-top-right-radius: 20px;
     border-bottom-right-radius: 20px;
-    background: var(--primaryColor); 
+    background: var(--primaryColor);
 }
 
 .join_H_button {
@@ -71,93 +76,20 @@
     color: var(--whiteColor);
 }
 
-.dashboard-content {
-    background: #060317;
-    height: 380px;
+@media (min-width: 768px) and (max-width: 992px) {
+    .offcanvas.offcanvas-start{
+        width: 25%;
+    }   
 }
 
-.monthly_d_style {
-    font-family: Poppins;
-    font-size: 16px;
-    font-weight: 500;
-    line-height: 24px;
-    letter-spacing: 0px;
-    color: var(--greyColor);
-}
-
-.month_btn_d {
-    width: 15%;
-    height: 35px;
-    border-radius: 6px;
-    background: var(--primaryColor);
-    border: none;
-    color: var(--whiteColor);
-    font-family: Poppins;
-    font-size: 13px;
-    font-weight: 500;
-    line-height: 19px;
-    letter-spacing: 0px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-.d2_style {
-    font-family: Poppins;
-    font-size: 35px;
-    font-weight: 500;
-    line-height: 53px;
-    letter-spacing: 0px;
-    color: var(--whiteColor);
-}
-
-.d_circle_style {
-    width: 100%;
-    height: 26px;
-    border-radius: 13px;
-    background: #1F2D2B;
-    font-family: Poppins;
-    font-size: 13px;
-    font-weight: 500;
-    line-height: 20px;
-    letter-spacing: 0px;
-    color: #20BFA4;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-.dot_d_style {
-    width: 10px;
-    height: 10px;
-    border-radius: 10px;
-    background: var(--primaryColor);
-}
-
-.p_d_style {
-    font-family: Poppins;
-    font-size: 16px;
-    font-weight: 500;
-    line-height: 21px;
-    letter-spacing: 0px;
-    color: var(--greyColor);
-}
-
-.k_style {
-    color: var(--greyColor);
-    font-family: Poppins;
-    font-size: 15px;
-    font-weight: 500;
-    line-height: 22px;
-    letter-spacing: 0px;
+@media (min-width: 576px) and (max-width: 767px) {
+    .offcanvas.offcanvas-start{
+        width: 35%;
+    }   
 }
 
 @media (max-width: 576px) {
-    .bell_icon {
-        display: none;
-    }
-
-    .join_H_button {
-        display: none;
-    }
+    .offcanvas.offcanvas-start{
+        width: 55%;
+    }   
 }

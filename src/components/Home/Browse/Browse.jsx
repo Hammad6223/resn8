@@ -1,6 +1,5 @@
 import React from 'react'
 import './Browse.css'
-import colors from '../../../Constant/Colors/colors'
 import Image_one from '../../../assets/images/Img_one.png'
 import Image_two from '../../../assets/images/Img_two.png'
 import Image_three from '../../../assets/images/Img_three.png'
@@ -26,10 +25,10 @@ export const Browse = () => {
             <div className="container-fluid browse_bg pt-5 pb-5">
                 <div className="container">
                     <div className="row">
-                        <div className="col-xxl-6 col-xl-6 col-lg-5 col-md-4 col-sm-5 col-12 ps-5">
+                        <div className="col-xxl-6 col-xl-6 col-lg-5 col-md-4 col-sm-5 col-12">
                             <p className='browse_name'>Browse Voices by <br /> Tone</p>
                         </div>
-                        <div className="col-xxl-6 col-xl-6 col-lg-7 col-md-8 col-sm-7 col-12 ps-5">
+                        <div className="col-xxl-6 col-xl-6 col-lg-7 col-md-8 col-sm-7 col-12">
                             <p className='explore_name'>
                                 Explore a vast array of voices, each carefully curated to strike
                                 the perfect tone that resonates seamlessly with your diverse audiences.
@@ -48,7 +47,7 @@ export const Browse = () => {
                                 )
                                     : (
                                         (
-                                            <div className="col-xxl-3 col-xl-3 col-lg-4 col-md-4 col-sm-6 mt-4 d-flex justify-content-center" key={index}>
+                                            <div className="col-xxl-3 col-xl-3 col-lg-4 col-md-4 col-sm-6 mt-4" key={index}>
                                                 <div className="card">
                                                     <img src={item.image} className="card-img-top" alt="..." />
                                                     <div className="card-body claming_box">

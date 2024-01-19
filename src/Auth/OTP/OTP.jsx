@@ -1,9 +1,7 @@
 import React, { useState } from 'react';
 import { useNavigate } from "react-router-dom";
 import './OTP.css'
-import 'bootstrap/dist/js/bootstrap.bundle.min.js';
-import colors from "../../Constant/Colors/colors";
-import { IoCloseCircle } from 'react-icons/io5';
+import {icons} from '../../Constant/Icons/Icons'
 
 export const OTP = () => {
   const [showModal, setShowModal] = useState(false);
@@ -27,7 +25,7 @@ export const OTP = () => {
                     onClick={() => setShowModal(false)}
                     aria-label="Close"
                   >
-                    <IoCloseCircle className='btn_close_icon' />
+                    <div className='btn_close_icon'>{icons.CloseIcon}</div>
                   </button>
                 </div>
                 <p className="forget_content">

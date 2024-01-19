@@ -8,8 +8,10 @@
 
 .dashboard_bg {
     background: #060317;
-    padding-bottom: 200px;
-    z-index: 1;
+}
+
+.dashboard_payment_bg{
+    background: #060317;
 }
 
 .dash_box1 {
@@ -75,49 +77,102 @@
 }
 
 .d_circle_style {
-    width: 22%;
+    width: 100%;
+    max-width: 70px;
     height: 30px;
     border-radius: 15px;
+    background: #1F2D2B;
+    font-family: Poppins;
+    font-size: 13px;
+    font-weight: 500;
+    line-height: 20px;
+    letter-spacing: 0px;
+    color: #20BFA4;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
-@media (min-width: 1400px) {
-    .month {
-        padding-left: 8%;
-        gap: 11%;
-    }
-
-    .img_div {
-        margin-top: 5%;
-    }
+.dashboard-content {
+    background: #060317;
+    height: 380px;
 }
+
+.monthly_d_style {
+    font-family: Poppins;
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 24px;
+    letter-spacing: 0px;
+    color: var(--greyColor);
+}
+
+.month_btn_d {
+    width: 100%;
+    max-width: 90px;
+    height: 35px;
+    border-radius: 6px;
+    background: var(--primaryColor);
+    border: none;
+    color: var(--whiteColor);
+    font-family: Poppins;
+    font-size: 13px;
+    font-weight: 500;
+    line-height: 19px;
+    letter-spacing: 0px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap:10px;
+}
+
+.d2_style {
+    font-family: Poppins;
+    font-size: 35px;
+    font-weight: 500;
+    line-height: 53px;
+    letter-spacing: 0px;
+    color: var(--whiteColor);
+}
+
+.dot_d_style {
+    width: 10px;
+    height: 10px;
+    border-radius: 10px;
+    background: var(--primaryColor);
+}
+
+.p_d_style {
+    font-family: Poppins;
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 21px;
+    letter-spacing: 0px;
+    color: var(--greyColor);
+}
+
+.k_style {
+    color: var(--greyColor);
+    font-family: Poppins;
+    font-size: 15px;
+    font-weight: 500;
+    line-height: 22px;
+    letter-spacing: 0px;
+}
+
+
 
 @media (min-width: 1200px) and (max-width: 1399px) {
-    .month {
-        padding-left: 7%;
-        gap: 11%;
-    }
-
-    .img_div {
-        margin-top: 8%;
-    }
+    
 }
 
 @media (min-width: 992px) and (max-width: 1199px) {
-    .month {
-        padding-left: 7%;
-        gap: 10%;
-    }
-
-    .img_div {
-        margin-top: 18%;
+    .dash_box2 {
+        margin-top: 1rem;
     }
 }
 
 @media (min-width: 768px) and (max-width: 991px) {
-    .month {
-        padding-left: 8%;
-        gap: 12%;
-    }
 
     .dash_box2 {
         margin-top: 1rem;
@@ -125,14 +180,6 @@
 }
 
 @media (min-width: 576px) and (max-width: 767px) {
-    .month {
-        padding-left: 8%;
-        gap: 11%;
-    }
-
-    .img_div {
-        margin-top: 48px;
-    }
 
     .dash_box2 {
         margin-top: 1rem;
@@ -140,20 +187,15 @@
 }
 
 @media (max-width: 576px) {
-    .month {
-        padding-left: 8%;
-        gap: 11%;
-    }
-
-    .img_div {
-        margin-top: 11%;
-    }
 
     .dash_box2 {
         margin-top: 1rem;
     }
-
-    .month_btn_d {
-        margin-right: auto;
+    .dash_boxes{
+        margin-top: 1rem;
     }
+
+    /* .month_btn_d {
+        margin-right: auto;
+    } */
 }

@@ -12,8 +12,38 @@
     font-weight: 400;
     line-height: 27px;
     letter-spacing: 0em;
-    text-align: right;
     color: var(--whiteColor);
+}
+
+.trending_name:hover {
+    border-bottom: 3px solid var(--primaryColor);
+}
+
+.slider_heading {
+    font-family: Poppins;
+    font-size: 50px;
+    font-weight: 600;
+    line-height: 54px;
+    letter-spacing: 0em;
+    color: #FFFFFF1A;
+}
+
+.slider_content {
+    font-family: Poppins;
+    font-size: 23px;
+    font-weight: 600;
+    line-height: 25px;
+    letter-spacing: 0em;
+    color: var(--whiteColor);
+}
+
+.slider_style_content {
+    font-family: Poppins;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 17px;
+    letter-spacing: 0em;
+    color: #636D79;
 }
 
 .hire_name {
@@ -22,9 +52,12 @@
     font-weight: 600;
     line-height: 64px;
     letter-spacing: 0.01em;
-    text-align: left;
-    padding-top: 150px;
     color: var(--whiteColor);
+    width: 85%;
+}
+
+.contet_text_style{
+    padding-top: 30%;
 }
 
 .search_name {
@@ -35,6 +68,7 @@
     letter-spacing: 0.01em;
     text-align: left;
     color: var(--whiteColor);
+    width: 85%;
 }
 
 .voice_name {
@@ -62,4 +96,29 @@
     justify-content: center;
     align-items: center;
     color: var(--whiteColor);
+}
+
+@media (min-width: 992px) and (max-width: 1199px) {
+    .contet_text_style{
+        padding-top: 0%;
+    }
+}
+
+@media (min-width: 768px) and (max-width: 991px) {
+    .contet_text_style{
+        padding-top: 2%;
+        /* text-align: center; */
+    }
+}
+
+@media (min-width: 576px) and (max-width: 767px) {
+    .contet_text_style{
+        padding-top: 2%;
+    }
+}
+
+@media (max-width: 576px) {
+    .contet_text_style{
+        padding-top: 2%;
+    }
 }

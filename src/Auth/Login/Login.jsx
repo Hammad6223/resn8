@@ -1,12 +1,10 @@
 import { useState } from 'react'
 import './Login.css'
-import { ForgetPassword } from '../ForgetPassword'
 import { useNavigate } from 'react-router-dom';
+import { ForgetPassword } from '../ForgetPassword'
 import Vector from '../../assets/images/Vectorline.png';
-import { ImFacebook2 } from "react-icons/im";
-import { FcGoogle } from "react-icons/fc";
-import { FaRegEye, FaRegEyeSlash } from "react-icons/fa";
 import { background } from '../../Constant/Background/Background'
+import { icons } from '../../Constant/Icons/Icons';
 
 export const Login = () => {
 
@@ -34,22 +32,22 @@ export const Login = () => {
 
     return (
         <>
-            <div className="container-fluid p-0 pb-3" style={background}>
-                <div className="container">
-                    <div className="row justify-content-center align-items-center">
+            <div className="container-fluid p-0" style={background}>
+                <div className="container h-100">
+                    <div className="row h-100 justify-content-center align-items-center">
                         <div className='col-xxl-4 col-xl-4 col-lg-5 col-md-7 col-sm-9 col-10 p-0'>
                             <div className='login_box'>
                                 <div className='heading_login'>Resn8</div>
                                 <div className='login_form'>
                                     <form action="">
                                         <label htmlFor="" className='label_style'>Email</label>
-                                            <input
-                                                type="text"
-                                                placeholder='Enter your email'
-                                                className='style_i_input'
-                                                value={email}
-                                                onChange={handleEmailChange}
-                                            />
+                                        <input
+                                            type="text"
+                                            placeholder='Enter your email'
+                                            className='style_i_input'
+                                            value={email}
+                                            onChange={handleEmailChange}
+                                        />
                                         <label htmlFor="" className='label_style mt-3'>Password</label>
                                         <div className='position-relative'>
                                             <input
@@ -63,7 +61,7 @@ export const Login = () => {
                                                 className='toggle_input_password'
                                                 onClick={togglePasswordVisibility}
                                             >
-                                                {showPassword ? <FaRegEye /> : <FaRegEyeSlash />}
+                                                {showPassword ? icons.EyeIcon : icons.EyeslashIcon}
                                             </span>
                                         </div>
                                     </form>
@@ -83,11 +81,11 @@ export const Login = () => {
                                         </div>
                                     </div>
                                     <button className='facebook_button'>
-                                        <ImFacebook2 className='facebook_icon' />
+                                        <div className='facebook_icon'>{icons.FacebookIcon}</div>
                                         Sign in with facebook
                                     </button>
                                     <button className='google_button'>
-                                        <FcGoogle className='google_icon' />
+                                        <div className='google_icon'>{icons.GoogleIcon}</div>
                                         Sign in with Google
                                     </button>
                                     <div className="row justify-content-center align-items-center mt-4 pb-5">

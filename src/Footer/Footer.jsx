@@ -1,8 +1,7 @@
 import React from 'react'
 import './Footer.css'
 import line from '../assets/images/Line_one.png'
-import { IoIosArrowForward } from "react-icons/io";
-import { FaFacebookF, FaTwitter, FaInstagram, FaRegCopyright } from "react-icons/fa";
+import { icons } from '../Constant/Icons/Icons'
 
 export const Footer = () => {
 
@@ -19,7 +18,7 @@ export const Footer = () => {
   const handleInstagramClick = () => {
     // Handle click logic here (e.g., open the URL in a new tab)
     window.open('https://www.instagram.com/', '_blank');
-    
+
   };
 
   const footerData = [
@@ -29,13 +28,13 @@ export const Footer = () => {
         <div key="lineStyle" className="line_style">
           <input key="emailInput" type="text" placeholder="Email address" className="footer_input" />
           <div className="curve_style">
-            <IoIosArrowForward className='curve_icon' />
+            <div className='curve_icon'>{icons.ArrowforwardIcon}</div>
           </div>
         </div>,
         <div className='d-flex gap-5'>
-          <FaFacebookF className='multiple_icons' onClick={handleFacebookClick}/>
-          <FaTwitter className='multiple_icons' onClick={handleTwitterClick}/>
-          <FaInstagram className='multiple_icons' onClick={handleInstagramClick}/>
+          <button className='multiple_icons' onClick={handleFacebookClick}>{icons.FacebookfIcon}</button>
+          <button className='multiple_icons' onClick={handleTwitterClick}>{icons.TwitterIcon}</button>
+          <button className='multiple_icons' onClick={handleInstagramClick}>{icons.InstagramIcon}</button>
         </div>
       ]
     },
@@ -53,14 +52,14 @@ export const Footer = () => {
       title: 'Company',
       items: [
         <div className='d-flex'>
-          <div style={{width: "50%"}}>
+          <div style={{ width: "50%" }}>
             <p>About Us</p>
             <p>Leadership</p>
             <p>Investor Relations</p>
             <p>Careers</p>
             <p>Press</p>
           </div>
-          <div style={{width: "50%"}}>
+          <div style={{ width: "50%" }}>
             <p>Contact Us</p>
             <p>Modern Slavery</p>
             <p>Terms & Condition</p>
@@ -70,8 +69,6 @@ export const Footer = () => {
       ]
     }
   ];
-
-  
 
   return (
     <section>
@@ -109,7 +106,7 @@ export const Footer = () => {
             <img src={line} alt="" style={{ width: "100%" }} />
           </div>
           <div className='project_detail mt-4'>
-            Copyright <FaRegCopyright className='copyright_icon ps-1 pe-1' /> 2024. All rights reserved
+            Copyright <div className='copyright_icon ps-1 pe-1'>{icons.CopyrightIcon}</div>2024. All rights reserved
           </div>
         </div>
       </div>

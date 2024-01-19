@@ -6,10 +6,10 @@
 }
 
 .login_box {
-    margin: 50px auto;
+    width: 100%;
+    margin: 36px auto;
     background-color: #060317;
     border-radius: 11px;
-    width: 100%;
 }
 
 .login_form {

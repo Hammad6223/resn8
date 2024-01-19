@@ -21,6 +21,7 @@
 .tick_icon {
     color: var(--primaryColor);
     font-size: 25px;
+    display: inline-block;
 }
 
 .upgrade_style {
@@ -86,6 +87,7 @@
 
 .grp_icon {
     font-size: 20px;
+    display: inline-block;
 }
 
 .line_p_style {
@@ -179,7 +181,7 @@
 }
 
 .check:checked+.checkbox .slide .toggle {
-    transform: translateX(128px);
+    /* transform: translateX(128px); */
     background: var(--primaryColor);
 }
 

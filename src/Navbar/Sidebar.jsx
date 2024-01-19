@@ -9,19 +9,9 @@ import { Payment } from '../components/Report/Payment/Payment';
 import { Setting } from '../components/Report/Settings&Privacy/Setting';
 import { CreateProfile } from '../components/Report/CreateProfile/CreateProfile';
 import { CustomSupport } from '../components/Report/CustomSupport/CustomSupport';
-import { IoReorderThreeOutline } from "react-icons/io5";
-import { FaCrown } from "react-icons/fa";
-import { GoBellFill } from "react-icons/go";
-import { BiSolidMessageRoundedDots } from "react-icons/bi";
+import { Foot } from '../Footer/Foot';
 import OvalImage from '../assets/images/Oval.png'
-import { LuLayoutDashboard } from "react-icons/lu";
-import { IoPersonOutline } from "react-icons/io5";
-import { PiNotepad } from "react-icons/pi";
-import { PiHandCoins } from "react-icons/pi";
-import { RiLockPasswordLine } from "react-icons/ri";
-import { LiaSmsSolid } from "react-icons/lia";
-import { IoIosLogOut } from "react-icons/io";
-
+import { icons } from '../Constant/Icons/Icons';
 
 export const Sidebar = () => {
 
@@ -33,90 +23,111 @@ export const Sidebar = () => {
     setActiveTab(tab);
   };
 
+  const tabData = [
+    { id: 'dashboard', label: 'Dashboard', icon: icons.DashboardIcon },
+    { id: 'findtalent', label: 'Find Talent', icon: icons.PersonOutline },
+    { id: 'saveprofile', label: 'Saved Profile', icon: icons.PersonOutline },
+    { id: 'orderhistory', label: 'Order History', icon: icons.NotepadIcon },
+    { id: 'payment', label: 'Payment', icon: icons.HandCoinsIcon },
+    { id: 'setting', label: 'Settings & Privacy', icon: icons.RiLockPasswordLine },
+    { id: 'profile', label: 'Create Profile', icon: icons.PersonOutline },
+    { id: 'custom', label: 'Customer Support', icon: icons.LiaSmsSolid },
+  ];
+
+  const MainLayout = () => {
+    return (
+      <>
+        {activeTab === 'dashboard' && <Dashboard />}
+        {activeTab === 'findtalent' && <FindTalent />}
+        {activeTab === 'saveprofile' && <SaveProfile />}
+        {activeTab === 'orderhistory' && <OrderHistory />}
+        {activeTab === 'payment' && <Payment />}
+        {activeTab === 'setting' && <Setting />}
+        {activeTab === 'profile' && <CreateProfile />}
+        {activeTab === 'custom' && <CustomSupport />}
+      </>
+    );
+  };
+
   return (
     <section>
-      <div className="d-flex">
-        <div className="sidebar col-xl-2 navbar-expand-xl ">
-          <div className="collapse navbar-collapse" id="collapsibleNavbar">
-            <div className='w-100'>
-              <span className='header_content ps-4' onClick={() => navigate('/landing')}>Resn8</span>
-              <div className='mt-5 d-flex flex-column gap-3'>
-                <button
-                  className={`dash_style d-flex gap-2 ps-4 ${activeTab === 'dashboard' ? 'active' : ''}`}
-                  onClick={() => handleTabChange('dashboard')}>
-                  <LuLayoutDashboard />
-                  Dashboard
-                </button>
-                <button
-                  className={`dash_style d-flex gap-2 ps-4 ${activeTab === 'findtalent' ? 'active' : ''}`}
-                  onClick={() => handleTabChange('findtalent')}>
-                  <IoPersonOutline />
-                  Find Talent
-                </button>
-                <button className={`dash_style d-flex gap-2 ps-4 ${activeTab === 'saveprofile' ? 'active' : ''}`}
-                  onClick={() => handleTabChange('saveprofile')}>
-                  <IoPersonOutline />
-                  Saved Profile
-                </button>
-                <button className={`dash_style d-flex gap-2 ps-4 ${activeTab === 'orderhistory' ? 'active' : ''}`}
-                  onClick={() => handleTabChange('orderhistory')}>
-                  <PiNotepad />
-                  Order History
-                </button>
-                <button className={`dash_style d-flex gap-2 ps-4 ${activeTab === 'payment' ? 'active' : ''}`}
-                  onClick={() => handleTabChange('payment')}>
-                  <PiHandCoins />
-                  Payment
-                </button>
-                <button className={`dash_style d-flex gap-2 ps-4 ${activeTab === 'setting' ? 'active' : ''}`}
-                  onClick={() => handleTabChange('setting')}>
-                  <RiLockPasswordLine />
-                  Settings & Privacy
-                </button>
-                <button className={`dash_style d-flex gap-2 ps-4 ${activeTab === 'profile' ? 'active' : ''}`}
-                  onClick={() => handleTabChange('profile')}>
-                  <IoPersonOutline />
-                  Create Profile
-                </button>
-                <button className={`dash_style d-flex gap-2 ps-4 ${activeTab === 'custom' ? 'active' : ''}`}
-                  onClick={() => handleTabChange('custom')}>
-                  <LiaSmsSolid />
-                  Customer Support
-                </button>
-                <button className='dash_style d-flex gap-2 ps-4' style={{ marginTop: "100px" }}>
-                  <IoIosLogOut />
-                  Logout
-                </button>
-              </div>
-            </div>
+      {/* Start of Navbar */}
+
+      <nav className="navbar navbar-expand-lg navbar-sidebar">
+        <div className="container-fluid">
+          <span className='header_content d-lg-block d-md-none d-sm-none d-none' onClick={() => navigate('/landing')}>Resn8</span>
+          <button className="navbar-toggler" data-bs-toggle="offcanvas" href="#offcanvasExample" role="button" aria-controls="offcanvasExample">
+            <div style={{ color: "white", fontSize: "30px" }}>{icons.ThreelineIcon}</div>
+          </button>
+          <div className='d-flex gap-3'>
+            <button className='join_H_button'>
+              <div style={{ color: "yellow" }}>{icons.CrownIcon}</div>
+              Join Now
+            </button>
+            <div className='bell_icon'>{icons.BellFillIcon}</div>
+            <div className='bell_icon'>{icons.MessageRoundedDots}</div>
+            <img src={OvalImage} alt="" />
           </div>
         </div>
-        <div className="container-fluid">
-          <div className="row">
-            <div className="col-md-12 p-0 ">
-              <nav className="navbar justify-content-xl-end gap-3 pe-4 mr-auto">
-                <button className="navbar-toggler d-xl-none" type="button" data-bs-toggle="collapse" data-bs-target="#collapsibleNavbar">
-                  <IoReorderThreeOutline className="navbar-toggler-icon" />
+      </nav>
+
+      {/* End of Navbar */}
+
+      {/* Start of Sidebar */}
+
+      <div className="container-fluid" >
+        <div className="row ">
+          <div className="col-xxl-2 col-xl-2 col-lg-3 pt-4 d-lg-block d-md-none d-sm-none d-none sidebar sidebar_comp pb-5 p-0 ">
+            <div className='d-flex flex-column gap-3'>
+              {tabData.map((tab) => (
+                <button
+                  key={tab.id}
+                  className={`dash_style d-flex gap-2 ps-4 ${activeTab === tab.id ? 'active' : ''}`}
+                  onClick={() => handleTabChange(tab.id)}
+                >
+                  {tab.icon}
+                  {tab.label}
                 </button>
-                <button className='join_H_button'>
-                  <FaCrown style={{ color: "yellow" }} /> Join Now
-                </button>
-                <GoBellFill className='bell_icon' />
-                <BiSolidMessageRoundedDots className='bell_icon' />
-                <img src={OvalImage} alt="" />
-              </nav>
-              {activeTab === 'dashboard' && <Dashboard />}
-              {activeTab === 'findtalent' && <FindTalent />}
-              {activeTab === 'saveprofile' && <SaveProfile />}
-              {activeTab === 'orderhistory' && <OrderHistory />}
-              {activeTab === 'payment' && <Payment />}
-              {activeTab === 'setting' && <Setting />}
-              {activeTab === 'profile' && <CreateProfile />}
-              {activeTab === 'custom' && <CustomSupport />}
+              ))}
+              <button className='dash_style d-flex gap-2 ps-4 mt-5' onClick={() => navigate('/')}>
+                {icons.LogOutIcon}
+                Logout
+              </button>
             </div>
+          </div>
+          <div className="col-xxl-10 col-xl-10 col-lg-9 col-md-12 col-sm-12 col-12 sidebar_comp dashboard_bg pb-5 p-0">
+            <MainLayout />
           </div>
         </div>
       </div>
-    </section>
+
+      {/* End of Sidebar */}
+
+      {/* Start of offcanvas */}
+
+      <div className="offcanvas offcanvas-start offcan sidebar col-md-1" id="offcanvasExample" aria-labelledby="offcanvasExampleLabel">
+        <span className='header_content ps-4' onClick={() => navigate('/landing')}>Resn8</span>
+        <div className='d-flex flex-column gap-3'>
+              {tabData.map((tab) => (
+                <button
+                  key={tab.id}
+                  className={`dash_style d-flex gap-2 ps-4 ${activeTab === tab.id ? 'active' : ''}`}
+                  onClick={() => handleTabChange(tab.id)}
+                >
+                  {tab.icon}
+                  {tab.label}
+                </button>
+              ))}
+              <button className='dash_style d-flex gap-2 ps-4 mt-5' onClick={() => navigate('/')}>
+                {icons.LogOutIcon}
+                Logout
+              </button>
+            </div>
+      </div>
+
+      {/* End of offcanvas */}
+
+      <Foot />
+    </section >
   )
 }

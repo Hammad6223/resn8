@@ -1,28 +1,21 @@
 import React, { useState } from 'react'
 import './Dashboard.css'
-import { HiUserGroup } from "react-icons/hi";
-import { MdArrowOutward } from "react-icons/md";
-import { GiReceiveMoney } from "react-icons/gi";
-import { FiArrowDownLeft } from "react-icons/fi";
-import { IoIosArrowDown } from "react-icons/io";
-import { GiProgression } from "react-icons/gi";
-import { BsPersonFillCheck } from "react-icons/bs";
-import Progress from '../../../assets/images/bar.png'
-
+import { ResponsiveContainer, BarChart, Bar, XAxis, YAxis } from 'recharts';
+import { icons } from '../../../Constant/Icons/Icons';
 
 
 export const Dashboard = () => {
 
   const data = [
     {
-      icon: <HiUserGroup className='grp_icon' />,
+      icon: <div className='grp_icon'>{icons.UserIcon}</div>,
       title: 'Total User',
       amount: '$120,784.02',
       percentage: '12.3%',
       change: '+1,453.89 today',
     },
     {
-      icon: <GiProgression className='grp_icon' />,
+      icon: <div className='grp_icon'>{icons.ProgressionIcon}</div>,
       title: 'Total Revenue',
       amount: '$120,784.02',
       percentage: '12.3%',
@@ -32,21 +25,21 @@ export const Dashboard = () => {
 
   const data1 = [
     {
-      icon: <BsPersonFillCheck className='grp_icon' />,
+      icon: <div className='grp_icon'>{icons.FillcheckIcon}</div>,
       title: 'Subscribed Customer',
       amount: '$120,784.02',
       percentage: '12.3%',
       change: '+1,453.89 today',
       color: 'red',
-      arrowIcon: <FiArrowDownLeft style={{ color: 'red' }} />,
+      arrowIcon: <div style={{ color: 'red', display: "inline-block" }}>{icons.ArrowdownLeftIcon}</div>,
     },
     {
-      icon: <GiReceiveMoney className='grp_icon' />,
+      icon: <div className='grp_icon'>{icons.ReceiveIcon}</div>,
       title: 'Average revenue per user (ARPU)',
       amount: '$120,784.02',
       percentage: '12.3%',
       change: '+1,453.89 today',
-      arrowIcon: <MdArrowOutward />,
+      arrowIcon: icons.ArrowoutIcon,
     },
   ];
 
@@ -69,16 +62,55 @@ export const Dashboard = () => {
     },
   ];
 
+  const Array = [
+    {
+      amount: 0,
+      profit: 5.5,
+      loss: 5,
+      month: "Jan"
+    },
+    {
+      amount: 5,
+      profit: 10,
+      loss: 9.2,
+      month: "Feb"
+    },
+    {
+      amount: 10,
+      profit: 9.5,
+      loss: 8.2,
+      month: "Mar"
+    },
+    {
+      amount: 15,
+      profit: 15,
+      loss: 12.5,
+      month: "Apr"
+    },
+    {
+      amount: 20,
+      profit: 11.2,
+      loss: 9.5,
+      month: "May"
+    },
+    {
+      amount: 20,
+      profit: 6.5,
+      loss: 5,
+      month: "Jun"
+    },
+  ]
+
   return (
     <section>
       <div className="container-fluid dashboard_bg">
         <div className="container pt-5">
           <div className="row">
-            <div className="col-xxl-6 col-xl-6 col-lg-6">
+            <div className="col-xxl-6 col-xl-6 col-lg-12">
               <div className="row">
                 {data.map((item, index) => (
                   <div className="col-sm-6" key={index}>
-                    <div className='dash_box1 pb-3'>
+                    <div className='dash_box1 pb-3 dash_boxes'>
                       <div className='ps-4 pt-3'>
                         <div className='d-flex gap-2'>
                           <div className='dash_circle'>{item.icon}</div>
@@ -86,7 +118,7 @@ export const Dashboard = () => {
                         </div>
                         <div className='text_d_style mt-2'>{item.amount}</div>
                         <div className='text1_d_style d-flex gap-2 mt-2'>
-                          <MdArrowOutward />
+                          {icons.ArrowoutIcon}
                           {item.percentage}
                           <span className='color_d'>{item.change}</span>
                         </div>
@@ -95,10 +127,10 @@ export const Dashboard = () => {
                   </div>
                 ))}
               </div>
-              <div className="row mt-3">
+              <div className="row mt-2">
                 {data1.map((item, index) => (
                   <div className="col-sm-6" key={index}>
-                    <div className='dash_box1 pb-3'>
+                    <div className='dash_box1 pb-3 dash_boxes'>
                       <div className='ps-4 pt-3'>
                         <div className='d-flex gap-2'>
                           <div className='dash_circle'>{item.icon}</div>
@@ -116,27 +148,30 @@ export const Dashboard = () => {
                 ))}
               </div>
             </div>
-            <div className="col-xxl-6 col-xl-6 col-lg-6">
+            <div className="col-xxl-6 col-xl-6 col-lg-12">
               {data2.map((item, index) => (
                 <div className='dash_box2 pb-3' key={index}>
-                  <div className='ps-4 pt-4'>
+                  <div className='ps-4 pe-4 pt-4'>
                     <div className='row justify-content-between'>
                       <div className='col-sm-7 col-12 monthly_d_style'>{item.title}</div>
-                      <button className='col-sm-4 col-12 month_btn_d me-4 d-flex gap-2'>
-                        {item.buttonLabel}<IoIosArrowDown />
-                      </button>
+                      <div className='col-sm-4 col-12 d-flex justify-content-end'>
+                        <button className='month_btn_d'>
+                          {item.buttonLabel}{icons.ArrowdownIcon}
+                        </button>
+                      </div>
+
                     </div>
-                    <div className='row mt-3'>
-                      <div className='col-sm-6'>
+                    <div className='row mt-3 m-0'>
+                      <div className='col-xxl-7 col-xl-7 col-lg-7 col-md-7 col-sm-7 col-12'>
                         <div className='d-flex gap-2'>
                           <div className='d2_style'>{item.amount}</div>
                           <div className='d_circle_style mt-2'>
-                            <MdArrowOutward />{item.percentage}
+                            {icons.ArrowoutIcon}{item.percentage}
                           </div>
                         </div>
                       </div>
-                      <div className='col-sm-6'>
-                        <div className='d-flex gap-5'>
+                      <div className='col-xxl-5 col-xl-5 col-lg-5 col-md-5 col-sm-5 col-12'>
+                        <div className='d-flex gap-5 justify-content-end'>
                           <div className='d-flex gap-2'>
                             <div className='dot_d_style mt-3' style={item.profits.dotStyle} />
                             <div className='p_d_style mt-2'>{item.profits.label}</div>
@@ -149,21 +184,18 @@ export const Dashboard = () => {
                       </div>
                     </div>
                     <div className="row mt-4">
-                      <div className="col-1 d-flex flex-column gap-4 p-0">
-                        {item.ticks.map((tick, idx) => (
-                          <div className='k_style' key={idx}>{tick}</div>
-                        ))}
-                      </div>
-                      <div className="col-10 p-0">
-                        <div className='img_div'>
-                          <img src={Progress} alt="" style={{ width: "100%" }} />
+                      <div className="col-12 p-0">
+                        <div className='pe-4'>
+                          <ResponsiveContainer width="100%" aspect={3}>
+                            <BarChart data={Array}>
+                              <XAxis dataKey="month" />
+                              <YAxis dataKey="amount" />
+                              <Bar dataKey="profit" fill="#EA1179" />
+                              <Bar dataKey="loss" fill='#C8C2FC' />
+                            </BarChart>
+                          </ResponsiveContainer>
                         </div>
                       </div>
-                    </div>
-                    <div className='d-flex month mt-2'>
-                      {item.months.map((month, idx) => (
-                        <div className='k_style' key={idx}>{month}</div>
-                      ))}
                     </div>
                   </div>
                 </div>

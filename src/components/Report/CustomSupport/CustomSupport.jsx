@@ -11,6 +11,9 @@ import Messageone from '../../../assets/images/chat_one.png'
 import Messagetwo from '../../../assets/images/chat_two.png'
 import Messagethree from '../../../assets/images/chat_three.png'
 import Messagefour from '../../../assets/images/chat_four.png'
+import { IoReorderThreeOutline } from "react-icons/io5";
+import { Toggle } from './Toggle';
+
 
 
 export const CustomSupport = () => {
@@ -64,17 +67,22 @@ export const CustomSupport = () => {
 
     return (
         <section>
-            <div className="container-fluid dashboard_bg">
+            <div className="container-fluid dashboard_bg pb-3">
                 <div className="container pt-4">
-                    <div className="row">
-                        <div className="col-md-12">
-                            <div className='find_browse_style'>
+                <div className="row">
+                        <div className="col-xxl-9 col-xl-9 col-lg-11 col-md-11 col-sm-11 col-10">
+                        <div className='find_browse_style'>
                                 Chat
                             </div>
                         </div>
+                        <div className="col-xxl-3 col-xl-3 col-lg-1 col-md-1 col-sm-1 col-2">
+                                <button className="d-xxl-none d-xl-none d-lg-block d-md-block d-sm-block d-block" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight" aria-controls="offcanvasRight" style={{ border: "none", background: "none" }}>
+                                    <IoReorderThreeOutline style={{ color: "white", fontSize: "30px" }} />
+                                </button>
+                        </div>
                     </div>
                     <div className="row mt-4">
-                        <div className="col-md-9">
+                        <div className="col-xxl-9 col-xl-9 col-lg-12">
                             <div className='chat_box pb-2'>
                                 <div className='d-flex ps-4 pt-2 gap-2'>
                                     <div>
@@ -144,7 +152,7 @@ export const CustomSupport = () => {
                                 </div>
                             </div>
                         </div>
-                        <div className="col-md-3">
+                        <div className="col-xxl-3 col-xl-3 d-xxl-block d-xl-block d-lg-none d-md-none d-sm-none d-none">
                             <div className='chat_list'>
                                 <div className='ps-4 pe-3 pt-3'>
                                     <div className='find_browse_style'>
@@ -170,6 +178,7 @@ export const CustomSupport = () => {
                     </div>
                 </div>
             </div>
+            <Toggle />
         </section>
     )
 }

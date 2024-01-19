@@ -1,25 +1,20 @@
 import React, { useState } from 'react'
 import './Setting.css'
-import { FaCcVisa } from "react-icons/fa";
-import { FaCcMastercard } from "react-icons/fa";
-import { FaCcAmex } from "react-icons/fa6";
-import { FaCcPaypal } from "react-icons/fa";
-import { FaIdCard } from "react-icons/fa";
-import { IoMdArrowDropdown } from "react-icons/io";
-
-
 
 export const Setting = () => {
 
-    const [selectedValue, setSelectedValue] = useState("");
-
-    const handleSelectChange = (event) => {
-        setSelectedValue(event.target.value);
-    };
+    const InputField = ({ label, type, placeholder, className, mt = 2 }) => (
+        <div className={`col-md-6 mt-${mt}`}>
+            <label className={`account_p_style ${label === "Email" || label === "Company" ? label : ""}`}>
+                {label}
+            </label>
+            <input type={type} placeholder={`Enter Your ${label}`} className={`input_p_box mt-2 ${className}`} />
+        </div>
+    );
 
     return (
         <section>
-            <div className="container-fluid dashboard_bg">
+            <div className="container-fluid dashboard_bg pb-3">
                 <div className="container pt-4">
                     <div className="row">
                         <div className="col-md-12">
@@ -33,26 +28,11 @@ export const Setting = () => {
                             <div className="order_box pb-5">
                                 <div className='ps-3 pe-3 pt-4'>
                                     <div className="row">
-                                        <div className="col-md-6">
-                                            <label className='account_p_style'>
-                                                Old Password
-                                            </label>
-                                            <input type="password" placeholder='Enter Your Old Password' className='input_p_box mt-2' />
-                                        </div>
-                                        <div className="col-md-6">
-                                            <label className='account_p_style'>
-                                                New Password
-                                            </label>
-                                            <input type="password" placeholder='Enter Your New Password' className='input_p_box mt-2' />
-                                        </div>
+                                        <InputField label="Old Password" type="password" />
+                                        <InputField label="New Password" type="password" />
                                     </div>
-                                    <div className="row mt-4">
-                                        <div className="col-md-6">
-                                            <label className='account_p_style'>
-                                                Confirm
-                                            </label>
-                                            <input type="password" placeholder='Enter Your Confirm Password' className='input_p_box mt-2' />
-                                        </div>
+                                    <div className="row mt-3">
+                                        <InputField label="Confirm" type="password" />
                                     </div>
                                 </div>
                             </div>
@@ -70,40 +50,17 @@ export const Setting = () => {
                             <div className="order_box pb-5">
                                 <div className='ps-3 pe-3 pt-4'>
                                     <div className="row">
-                                        <div className="col-md-6">
-                                            <label className='account_p_style'>
-                                                Name
-                                            </label>
-                                            <input type="text" placeholder='Enter Your Name' className='input_p_box mt-2' />
-                                        </div>
-                                        <div className="col-md-6">
-                                            <label className='account_p_style'>
-                                                Email
-                                            </label>
-                                            <input type="text" placeholder='Select Your Email' className='input_p_box mt-2' />
-                                        </div>
+                                        <InputField label="Name" type="text" />
+                                        <InputField label="Email" type="text" />
                                     </div>
-                                    <div className="row mt-4">
-                                        <div className="col-md-6">
-                                            <label className='account_p_style'>
-                                                Phone Number
-                                            </label>
-                                            <input type="number" placeholder='Select Your Number' className='input_p_box mt-2' />
-                                        </div>
-                                        <div className="col-md-6">
-                                            <label className='account_p_style'>
-                                                Company Name
-                                            </label>
-                                            <input type="text" placeholder='Enter Your Company Name' className='input_p_box mt-2' />
-                                        </div>
+
+                                    <div className="row mt-3">
+                                        <InputField label="Phone Number" type="text" />
+                                        <InputField label="Company Name" type="text" />
                                     </div>
-                                    <div className="row mt-4">
-                                        <div className="col-md-6">
-                                            <label className='account_p_style'>
-                                                Company Role
-                                            </label>
-                                            <input type="text" placeholder='Enter Your Company Role' className='input_p_box mt-2' />
-                                        </div>
+
+                                    <div className="row mt-3">
+                                        <InputField label="Company Role" type="text" />
                                     </div>
                                 </div>
                             </div>

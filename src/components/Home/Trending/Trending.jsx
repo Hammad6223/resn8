@@ -1,12 +1,11 @@
 import React from 'react'
 import './Trending.css'
-import colors from '../../../Constant/Colors/colors'
-import { FaLongArrowAltRight } from "react-icons/fa";
 import Rectangle_one from '../../../assets/images/Rectangle_one.png'
 import Rectangle_two from '../../../assets/images/Rectangle_two.png'
 import Rectangle_three from '../../../assets/images/Rectangle_three.png'
 import Rectangle_four from '../../../assets/images/Rectangle_four.png'
 import Rectangle_five from '../../../assets/images/Rectangle_five.png'
+import { icons } from '../../../Constant/Icons/Icons'
 
 export const Trending = () => {
 
@@ -31,7 +30,7 @@ export const Trending = () => {
                         <div className="col d-flex justify-content-end pt-3">
                             <div className='view_styling'>
                                 View All
-                                <FaLongArrowAltRight />
+                                {icons.RightarrowIcon}
                             </div>
                         </div>
                     </div>
@@ -39,7 +38,7 @@ export const Trending = () => {
                         {data.map((item, index) => (
                             <div className={`${index === 1 ? 'col-md-8' : 'col-md-4'} p-2`} key={index} style={{position: "relative"}}>
                                 <img src={item.image} alt="" style={{width:'100%'}}/>
-                                <div className={`${index === 1 ? 'card_image2' : 'card_image'}`} style={{color: colors.whiteColor}}>
+                                <div className={`${index === 1 ? 'card_image2' : 'card_image'}`} style={{color: "white"}}>
                                     <p className='trending_title'> {item.title}</p>
                                     <p className='trending_des'> {item.des}</p>
                                 </div>

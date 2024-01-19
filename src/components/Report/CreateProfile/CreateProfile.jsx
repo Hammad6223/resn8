@@ -1,11 +1,6 @@
 import React, { useState } from 'react'
 import './CreateProfile.css'
-import { IoMdArrowDropdown } from "react-icons/io";
-import { IoIosAttach } from "react-icons/io";
-import { MdPhotoCamera } from "react-icons/md";
-
-
-
+import { icons } from '../../../Constant/Icons/Icons';
 
 export const CreateProfile = () => {
 
@@ -25,9 +20,39 @@ export const CreateProfile = () => {
         }));
     };
 
+    const CommonInput = ({ label, type, placeholder, value, onChange, icon }) => (
+        <>
+            <label className={`account_p_style ${label.replace(/\s+/g, '')}`}>{label}</label>
+            <div className='custom-dropdown'>
+                <input type={type} placeholder={placeholder} className="input_p_box mt-2" value={value} onChange={onChange} />
+                {icon && <div className="dropdown-icon">{icon}</div>}
+            </div>
+        </>
+    );
+
+    const CommonDropdown = ({ label, options, value, onChange, icon }) => (
+        <>
+            <label className={`account_p_style ${label.replace(/\s+/g, '')}`}>{label}</label>
+            <div className="custom-dropdown mt-1">
+                <select className="style_input" value={value} onChange={(e) => onChange(e)}>
+                    <option value="" disabled hidden>Select Your {label}</option>
+                    {options.map((option) => (
+                        <option key={option.value} value={option.value}>
+                            {option.label}
+                        </option>
+                    ))}
+                </select>
+                {icon && <div className="dropdown-icon">{icon}</div>}
+            </div>
+        </>
+    );
+
+
+
+
     return (
         <section>
-            <div className="container-fluid dashboard_bg">
+            <div className="container-fluid dashboard_bg pb-3">
                 <div className="container pt-4">
                     <div className="row">
                         <div className="col-md-10">
@@ -43,181 +68,100 @@ export const CreateProfile = () => {
                             </div>
                         </div>
                     </div>
-                    <div className="row mt-4">
+                    <div className="row mt-3">
                         <div className="col-md-12">
                             <div className="order_box pb-5">
                                 <div className='ps-3 pe-3 pt-4'>
                                     <div className="row">
                                         <div className="col-md-6">
-                                            <label className='account_p_style'>
-                                                Name
-                                            </label>
-                                            <input type="text" placeholder='Enter Your Name' className='input_p_box mt-2' />
+                                            <CommonInput label="Name" type="text" placeholder="Enter your Name" />
                                         </div>
                                         <div className="col-md-6">
-                                            <label className='account_p_style'>
-                                                Accent
-                                            </label>
-                                            <div className="custom-dropdown mt-1">
-                                                <select
-                                                    className='style_input'
-                                                    value={selectedValues.accent}
-                                                    onChange={(e) => handleSelectChange(e, 'accent')}
-                                                >
-                                                    <option value="" disabled hidden>Select Your Accent</option>
-                                                    <option value="option1">Primary</option>
-                                                    <option value="option2">Seconday</option>
-                                                </select>
-                                                <IoMdArrowDropdown className="dropdown-icon" />
-                                            </div>
+                                            <CommonDropdown
+                                                label="Accent"
+                                                options={[{ value: "Primary", label: "Primary" }, { value: "Secondary", label: "Secondary" }]}
+                                                value={selectedValues.accent}
+                                                onChange={(e) => handleSelectChange(e, 'accent')}
+                                                icon={icons.DropIcon}
+                                            />
                                         </div>
                                     </div>
-                                    <div className="row mt-4">
+                                    <div className="row mt-3">
                                         <div className="col-md-6">
-                                            <label className='account_p_style'>
-                                                Price
-                                            </label>
-                                            <input type="text" placeholder='Enter Your Name' className='input_p_box mt-2' />
+                                            <CommonInput label="Price" type="text" placeholder="Enter your Price" />
                                         </div>
                                         <div className="col-md-6">
-                                            <label className='account_p_style'>
-                                                Gender
-                                            </label>
-                                            <div className="custom-dropdown mt-1">
-                                                <select
-                                                    className='style_input'
-                                                    value={selectedValues.gender}
-                                                    onChange={(e) => handleSelectChange(e, 'gender')}
-                                                >
-                                                    <option value="" disabled hidden>Select Your Gender</option>
-                                                    <option value="option1">Male</option>
-                                                    <option value="option2">Female</option>
-                                                </select>
-                                                <IoMdArrowDropdown className="dropdown-icon" />
-                                            </div>
+                                            <CommonDropdown
+                                                label="Gender"
+                                                options={[{ value: "Male", label: "Male" }, { value: "Female", label: "Female" }]}
+                                                value={selectedValues.gender}
+                                                onChange={(e) => handleSelectChange(e, 'gender')}
+                                                icon={icons.DropIcon}
+                                            />
                                         </div>
                                     </div>
-                                    <div className="row mt-4">
+                                    <div className="row mt-3">
                                         <div className="col-md-6">
-                                            <label className='account_p_style'>
-                                                Age Range
-                                            </label>
-                                            <div className="custom-dropdown mt-1">
-                                                <select
-                                                    className='style_input'
-                                                    value={selectedValues.age}
-                                                    onChange={(e) => handleSelectChange(e, 'age')}
-                                                >
-                                                    <option value="" disabled hidden>Select Your Age</option>
-                                                    <option value="option1">Infant</option>
-                                                    <option value="option2">Teen</option>
-                                                    <option value="option2">Adult</option>
-                                                </select>
-                                                <IoMdArrowDropdown className="dropdown-icon" />
-                                            </div>
+                                            <CommonDropdown
+                                                label="Age Range"
+                                                options={[{ value: "Infant", label: "Infant" }, { value: "Teen", label: "Teen" }, { value: "Adult", label: "Adult" }]}
+                                                value={selectedValues.age}
+                                                onChange={(e) => handleSelectChange(e, 'age')}
+                                                icon={icons.DropIcon}
+                                            />
                                         </div>
                                         <div className="col-md-6">
-                                            <label className='account_p_style'>
-                                                Upload Voice Sample
-                                            </label>
-                                            <div className="custom-dropdown">
-                                                <input type="text" placeholder='Upload Your Voice Sample' className='input_p_box mt-2' />
-                                                <IoIosAttach className="dropdown-icon" />
-                                            </div>
+                                            <CommonInput label="Upload Voice Sample" type="text" placeholder="Upload Your Voice Sample" icon={icons.AttachIcon} />
                                         </div>
                                     </div>
-                                    <div className="row mt-4">
+                                    <div className="row mt-3">
                                         <div className="col-md-6">
-                                            <label className='account_p_style'>
-                                                Language
-                                            </label>
-                                            <div className="custom-dropdown mt-1">
-                                                <select
-                                                    className='style_input'
-                                                    value={selectedValues.language}
-                                                    onChange={(e) => handleSelectChange(e, 'language')}
-                                                >
-                                                    <option value="" disabled hidden>Select Your Language</option>
-                                                    <option value="option1">English</option>
-                                                    <option value="option2">French</option>
-                                                </select>
-                                                <IoMdArrowDropdown className="dropdown-icon" />
-                                            </div>
+                                            <CommonDropdown
+                                                label="Language"
+                                                options={[{ value: "English", label: "English" }, { value: "French", label: "French" }]}
+                                                value={selectedValues.language}
+                                                onChange={(e) => handleSelectChange(e, 'language')}
+                                                icon={icons.DropIcon}
+                                            />
                                         </div>
                                         <div className="col-md-6">
-                                            <label className='account_p_style'>
-                                                Tone
-                                            </label>
-                                            <div className="custom-dropdown mt-1">
-                                                <select
-                                                    className='style_input'
-                                                    value={selectedValues.tone}
-                                                    onChange={(e) => handleSelectChange(e, 'tone')}
-                                                >
-                                                    <option value="" disabled hidden>Select Your Tone</option>
-                                                    <option value="option1">Casual</option>
-                                                    <option value="option2">Formal</option>
-                                                    <option value="option2">Friendly</option>
-                                                    <option value="option2">Professional</option>
-                                                </select>
-                                                <IoMdArrowDropdown className="dropdown-icon" />
-                                            </div>
+                                            <CommonDropdown
+                                                label="Tone"
+                                                options={[{ value: "Casual", label: "Casual" }, { value: "Formal", label: "Formal" }, { value: "Friendly", label: "Friendly" }]}
+                                                value={selectedValues.tone}
+                                                onChange={(e) => handleSelectChange(e, 'tone')}
+                                                icon={icons.DropIcon}
+                                            />
                                         </div>
                                     </div>
-                                    <div className="row mt-4">
+                                    <div className="row mt-3">
                                         <div className="col-md-6">
-                                            <label className='account_p_style'>
-                                                Purpose
-                                            </label>
-                                            <div className="custom-dropdown mt-1">
-                                                <select
-                                                    className='style_input'
-                                                    value={selectedValues.purpose}
-                                                    onChange={(e) => handleSelectChange(e, 'purpose')}
-                                                >
-                                                    <option value="" disabled hidden>Select Your Purpose</option>
-                                                    <option value="option1">Business</option>
-                                                    <option value="option2">Social</option>
-                                                </select>
-                                                <IoMdArrowDropdown className="dropdown-icon" />
-                                            </div>
+                                            <CommonDropdown
+                                                label="Purpose"
+                                                options={[{ value: "Business", label: "Business" }, { value: "Social", label: "Social" }]}
+                                                value={selectedValues.purpose}
+                                                onChange={(e) => handleSelectChange(e, 'purpose')}
+                                                icon={icons.DropIcon}
+                                            />
                                         </div>
                                         <div className="col-md-6">
-                                            <label className='account_p_style'>
-                                                Profile Picture
-                                            </label>
-                                            <div className="custom-dropdown">
-                                                <input type="text" placeholder='Upload Your Photo' className='input_p_box mt-2' />
-                                                <MdPhotoCamera className="dropdown-icon" />
-                                            </div>
+                                            <CommonInput label="Profile Picture" type="text" placeholder="Upload Your Photo" icon={icons.PhotoCameraIcon} />
                                         </div>
                                     </div>
-                                    <div className="row mt-4">
+                                    <div className="row mt-3">
                                         <div className="col-md-6">
-                                            <label className='account_p_style'>
-                                                Instagram
-                                            </label>
-                                            <input type="text" placeholder='Enter Your URL' className='input_p_box mt-2' />
+                                            <CommonInput label="Instagram" type="text" placeholder="Enter Your URL" />
                                         </div>
                                         <div className="col-md-6">
-                                            <label className='account_p_style'>
-                                                Youtube
-                                            </label>
-                                            <input type="text" placeholder='Enter Your URL' className='input_p_box mt-2' />
+                                            <CommonInput label="Youtube" type="text" placeholder="Enter Your URL" />
                                         </div>
                                     </div>
-                                    <div className="row mt-4">
+                                    <div className="row mt-3">
                                         <div className="col-md-6">
-                                            <label className='account_p_style'>
-                                                Twitter
-                                            </label>
-                                            <input type="text" placeholder='Enter Your URL' className='input_p_box mt-2' />
+                                            <CommonInput label="Twitter" type="text" placeholder="Enter Your URL" />
                                         </div>
                                         <div className="col-md-6">
-                                            <label className='account_p_style'>
-                                                Tiktok
-                                            </label>
-                                            <input type="text" placeholder='Enter Your URL' className='input_p_box mt-2' />
+                                            <CommonInput label="Tiktok" type="text" placeholder="Enter Your URL" />
                                         </div>
                                     </div>
                                     <div className='d-flex justify-content-end mt-5'>

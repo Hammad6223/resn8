@@ -5,7 +5,7 @@ import { Card } from '../Card/Card'
 export const SaveProfile = () => {
     return (
         <section>
-            <div className="container-fluid dashboard_bg">
+            <div className="container-fluid dashboard_bg pb-3">
                 <div className="container pt-4">
                     <div className="row">
                         <div className="col-md-12">
@@ -16,8 +16,8 @@ export const SaveProfile = () => {
                     </div>
                     <div className="row mt-4">
                         <div className="col-md-12 p-0">
-                            <div className="find_t_box pb-3">
-                                <div className="row m-0 ms-2">
+                            <div className="find_t_box pb-3 ps-2">
+                                <div className="row m-0">
                                     <div className="col-md-3 p-0">
                                         <Card />
                                     </div>

@@ -5,8 +5,7 @@ import Elipse_two from '../../../assets/images/Ellipse_two.png'
 import Elipse_three from '../../../assets/images/Ellipse_three.png'
 import Elipse_four from '../../../assets/images/Ellipse_four.png'
 import Wing from '../../../assets/images/pngwing.png'
-import colors from '../../../Constant/Colors/colors'
-import { FaHeadphonesAlt } from "react-icons/fa";
+import { icons } from '../../../Constant/Icons/Icons'
 
 export const Talent = () => {
     return (
@@ -31,7 +30,7 @@ export const Talent = () => {
                                     <div className="col-xxl-4 col-xl-4 col-lg-5 col-md-4 col-sm-5 col-12 d-flex justify-content-center align-items-center flex-column">
                                         <div className="row white_circle">
                                             <div className='col-3 p-0 border_styling'>
-                                                <FaHeadphonesAlt style={{ fontSize: "40px" }} />
+                                                <div style={{ fontSize: "40px" }}>{icons.HeadphoneIcon}</div>
                                             </div>
                                             <div className='col p-0 d-flex justify-content-center align-items-center'>
                                                 <div className='explore_styling'>Explore Voices</div>
@@ -39,7 +38,7 @@ export const Talent = () => {
                                         </div>
                                         <div className="d-flex w-100 mt-3 justify-content-center">
                                             <button className='learn_btn'>
-                                                    Learn more
+                                                Learn more
                                             </button>
                                         </div>
                                     </div>

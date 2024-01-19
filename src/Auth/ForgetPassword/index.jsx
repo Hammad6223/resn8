@@ -1,10 +1,6 @@
 import { useState, useEffect, useContext } from "react"
 import './ForgetPassword.css'
-import { IoCloseCircle } from "react-icons/io5";
-import { IoIosMail, IoMdCloseCircle } from "react-icons/io";
-import 'bootstrap/dist/js/bootstrap.bundle.min.js';
-import colors from "../../Constant/Colors/colors";
-
+import { icons } from "../../Constant/Icons/Icons";
 
 export const ForgetPassword = () => {
 
@@ -34,14 +30,14 @@ export const ForgetPassword = () => {
                     onClick={() => setShowModal(false)}
                     aria-label="Close"
                   >
-                    <IoCloseCircle className='btn_close_icon' />
+                    <div className='btn_close_icon'>{icons.CloseIcon}</div>
                   </button>
                 </div>
                 <p className="forget_content">Enter the email associated <br /> with your account</p>
                 <form action="">
                   <div className='position-relative'>
                     <span className='mail_icon'>
-                      <IoIosMail />
+                      {icons.MailIcon}
                     </span>
                     <input type="text" placeholder='Enter your email' className='forget_style_input' />
                   </div>

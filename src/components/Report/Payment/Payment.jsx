@@ -1,13 +1,6 @@
 import React, { useState } from 'react'
 import './Payment.css'
-import { FaCcVisa } from "react-icons/fa";
-import { FaCcMastercard } from "react-icons/fa";
-import { FaCcAmex } from "react-icons/fa6";
-import { FaCcPaypal } from "react-icons/fa";
-import { FaIdCard } from "react-icons/fa";
-import { IoMdArrowDropdown } from "react-icons/io";
-
-
+import { icons } from '../../../Constant/Icons/Icons';
 
 export const Payment = () => {
 
@@ -19,7 +12,7 @@ export const Payment = () => {
 
     return (
         <section>
-            <div className="container-fluid dashboard_bg">
+            <div className="container-fluid dashboard_payment_bg">
                 <div className="container pt-4">
                     <div className="row">
                         <div className="col-md-12">
@@ -38,13 +31,13 @@ export const Payment = () => {
                                     <div className='position-relative'>
                                         <input type="text" placeholder='1234 1234 1234 1234' className='input_p_box mt-2' />
                                         <span className='icon_card d-flex gap-2'>
-                                            <FaCcVisa className='icon_p_style' />
-                                            <FaCcMastercard className='icon_p_style' />
-                                            <FaCcAmex className='icon_p_style' />
-                                            <FaCcPaypal className='icon_p_style' />
+                                            <div className='icon_p_style'>{icons.VisaIcon}</div>
+                                            <div className='icon_p_style'>{icons.MastercardIcon}</div>
+                                            <div className='icon_p_style'>{icons.AmexIcon}</div>
+                                            <div className='icon_p_style'>{icons.PaypalIcon}</div>
                                         </span>
                                     </div>
-                                    <div className="row mt-4">
+                                    <div className="row mt-3">
                                         <div className="col-md-6">
                                             <label className='account_p_style'>
                                                 Account Number
@@ -52,18 +45,18 @@ export const Payment = () => {
                                             <input type="text" placeholder='MM / YY' className='input_p_box mt-2' />
                                         </div>
                                         <div className="col-md-6">
-                                            <label className='account_p_style'>
+                                            <label className='account_p_style CVC'>
                                                 CVC
                                             </label>
                                             <div className='position-relative'>
                                                 <input type="text" placeholder='CVC' className='input_p_box mt-2' />
                                                 <span className='icon_card d-flex gap-2'>
-                                                    <FaIdCard className='icon_p_style' />
+                                                    <div className='icon_p_style'>{icons.IdCardIcon}</div>
                                                 </span>
                                             </div>
                                         </div>
                                     </div>
-                                    <div className="row mt-4">
+                                    <div className="row mt-3">
                                         <div className="col-md-6">
                                             <label className='account_p_style'>
                                                 Routing Number
@@ -78,11 +71,11 @@ export const Payment = () => {
                                                     <option value="option2">China</option>
                                                     <option value="option2">Iran</option>
                                                 </select>
-                                                <IoMdArrowDropdown className="dropdown-icon" />
+                                                <div className="dropdown-icon">{icons.DropIcon}</div>
                                             </div>
                                         </div>
                                         <div className="col-md-6">
-                                            <label className='account_p_style'>
+                                            <label className='account_p_style ZIP'>
                                                 ZIP
                                             </label>
                                             <input type="text" placeholder='01234' className='input_p_box mt-2' />
