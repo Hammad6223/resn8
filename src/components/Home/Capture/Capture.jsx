@@ -1,4 +1,5 @@
 import React from 'react'
+import { LazyLoadImage } from 'react-lazy-load-image-component';
 import './Capture.css'
 import Vector from '../../../assets/images/Vector.png'
 import Play from '../../../assets/images/Play.png'
@@ -49,7 +50,13 @@ export const Capture = () => {
                                 <div className='position-relative'>
                                     <div className='rectangle_style'> <div className='heart_icon'>{icons.HeartbeatIcon}</div></div>
                                     <div className='position-relative text-center'>
-                                        <img src={Vector} alt="" className='vector_img' />
+                                        <LazyLoadImage
+                                            // alt={image.alt}
+                                            // height={image.height}
+                                            src={Vector} // use normal <img> attributes as props
+                                            // width={image.width} 
+                                            className='vector_img'/>
+                                        {/* <img src={Vector} alt="" className='vector_img' /> */}
                                         <div className='img_position'>
                                             <img src={Play} alt="" className='play_img' />
                                             <span className='play_name'>How it works?</span>
@@ -73,9 +80,9 @@ export const Capture = () => {
                             <div className="col-xxl-5 col-xl-6 icons_space">
                                 <div className="d-none d-sm-none d-md-noned-lg-none d-xl-block d-xxl-block">
                                     <div className="d-flex flex-wrap gap-3">
-                                    {iconsArray.map((_, index) => (
-                                       <div className='music_font' key={index}>{icons.WaveIcon}</div>
-                                    ))}
+                                        {iconsArray.map((_, index) => (
+                                            <div className='music_font' key={index}>{icons.WaveIcon}</div>
+                                        ))}
                                     </div>
                                 </div>
                             </div>
