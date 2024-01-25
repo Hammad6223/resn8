@@ -14,6 +14,7 @@
     "@fortawesome/fontawesome-svg-core": "^6.5.1",
     "@fortawesome/free-solid-svg-icons": "^6.5.1",
     "@fortawesome/react-fontawesome": "^0.2.0",
+    "aos": "^2.3.4",
     "bootstrap": "^5.3.2",
     "react": "^18.2.0",
     "react-bootstrap": "^2.10.0",
@@ -23,7 +24,8 @@
     "react-lazy-load-image-component": "^1.6.0",
     "react-multi-carousel": "^2.8.4",
     "react-router-dom": "^6.21.1",
-    "recharts": "^2.10.4"
+    "recharts": "^2.10.4",
+    "wavesurfer-react": "^3.0.1"
   },
   "devDependencies": {
     "@types/react": "^18.2.43",

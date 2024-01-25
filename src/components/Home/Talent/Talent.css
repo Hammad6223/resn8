@@ -116,6 +116,16 @@
     line-height: 30px;
     letter-spacing: 0em;
     color: var(--whiteColor);
+    transition: ease-out 0.5s;
+}
+
+.learn_btn:hover {
+    color: #060317;
+    box-shadow: inset 0 -100px 0 0 var(--whiteColor);
+}
+
+.learn_btn:active {
+    transform: scale(0.9);
 }
 
 .img_styling {

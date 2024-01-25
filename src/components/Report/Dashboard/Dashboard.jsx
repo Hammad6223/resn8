@@ -1,10 +1,19 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 import './Dashboard.css'
+import AOS from 'aos';
+import 'aos/dist/aos.css';
 import { ResponsiveContainer, BarChart, Bar, XAxis, YAxis } from 'recharts';
 import { icons } from '../../../Constant/Icons/Icons';
 
 
 export const Dashboard = () => {
+
+  useEffect(() => {
+    AOS.init({
+      offset: 300,
+      duration: 1000,
+    });
+  }, []); // Run this effect only once when the component mounts
 
   const data = [
     {
@@ -109,7 +118,7 @@ export const Dashboard = () => {
             <div className="col-xxl-6 col-xl-6 col-lg-12">
               <div className="row">
                 {data.map((item, index) => (
-                  <div className="col-sm-6" key={index}>
+                  <div className="col-sm-6" key={index} data-aos="fade-up">
                     <div className='dash_box1 pb-3 dash_boxes'>
                       <div className='ps-4 pt-3'>
                         <div className='d-flex gap-2'>
@@ -129,7 +138,7 @@ export const Dashboard = () => {
               </div>
               <div className="row mt-2">
                 {data1.map((item, index) => (
-                  <div className="col-sm-6" key={index}>
+                  <div className="col-sm-6" key={index} data-aos="fade-down">
                     <div className='dash_box1 pb-3 dash_boxes'>
                       <div className='ps-4 pt-3'>
                         <div className='d-flex gap-2'>
@@ -148,18 +157,24 @@ export const Dashboard = () => {
                 ))}
               </div>
             </div>
-            <div className="col-xxl-6 col-xl-6 col-lg-12">
+            <div className="col-xxl-6 col-xl-6 col-lg-12" data-aos="fade-down">
               {data2.map((item, index) => (
                 <div className='dash_box2 pb-3' key={index}>
                   <div className='ps-4 pe-4 pt-4'>
                     <div className='row justify-content-between'>
                       <div className='col-sm-7 col-12 monthly_d_style'>{item.title}</div>
                       <div className='col-sm-4 col-12 d-flex justify-content-end'>
-                        <button className='month_btn_d'>
-                          {item.buttonLabel}{icons.ArrowdownIcon}
-                        </button>
+                        <div class="dropdown">
+                          <button className="btn month_btn_d dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
+                            This Month
+                          </button>
+                          <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+                            <li><a class="dropdown-item" href="#">January</a></li>
+                            <li><a class="dropdown-item" href="#">February</a></li>
+                            <li><a class="dropdown-item" href="#">March</a></li>
+                          </ul>
+                        </div>
                       </div>
-
                     </div>
                     <div className='row mt-3 m-0'>
                       <div className='col-xxl-7 col-xl-7 col-lg-7 col-md-7 col-sm-7 col-12'>

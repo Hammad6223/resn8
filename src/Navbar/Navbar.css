@@ -46,9 +46,54 @@
     justify-content: center;
     align-items: center;
     color: var(--whiteColor);
+    transition: ease-out 0.5s;
+}
+
+.join_button:hover {
+    color: #060317;
+    box-shadow: inset 0 -100px 0 0 var(--whiteColor);
+}
+
+.join_button:active {
+    transform: scale(0.9);
 }
 
 .nav-link:hover {
     color: #d0126c;
     border-bottom: 1px solid white;
+}
+
+.close_button{
+    border: none;
+    background: none;
+}
+
+.offcanvas.offcanvas-top{
+    height: 100vh;
+    background: black;
+}
+
+
+@media (min-width: 768px) and (max-width: 992px) {
+    .navbar-nav{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+}
+
+@media (min-width: 576px) and (max-width: 768px) {
+    .navbar-nav{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+}
+
+@media (max-width: 576px){
+    .navbar-nav{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
 }

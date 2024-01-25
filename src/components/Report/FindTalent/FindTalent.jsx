@@ -1,5 +1,7 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 import './FindTalent.css'
+import AOS from 'aos';
+import 'aos/dist/aos.css';
 import Tone from '../../../assets/images/ton.png'
 import Accent from '../../../assets/images/acct.png'
 import { ReactiveBase, RangeSlider } from '@appbaseio/reactivesearch';
@@ -11,6 +13,13 @@ export const FindTalent = () => {
 
     const [showCheckboxes, setShowCheckboxes] = useState(false);
     const [selectedOption, setSelectedOption] = useState(null);
+
+    useEffect(() => {
+        AOS.init({
+          offset: 300,
+          duration: 1000,
+        });
+      }, []); // Run this effect only once when the component mounts
 
     const checkboxesData = [
         { name: "lifestyle", label: "Lifestyle" },
@@ -74,12 +83,12 @@ export const FindTalent = () => {
             <div className="container-fluid dashboard_bg pb-3">
                 <div className="container pt-4">
                     <div className="row">
-                        <div className="col-xxl-9 col-xl-9 col-lg-11 col-md-11 col-sm-11 col-10">
+                        <div className="col-xxl-9 col-xl-9 col-lg-11 col-md-11 col-sm-11 col-10" data-aos="fade-up">
                             <div className='find_browse_style'>
                                 Browse Voices
                             </div>
                         </div>
-                        <div className="col-xxl-3 col-xl-3 col-lg-1 col-md-1 col-sm-1 col-1">
+                        <div className="col-xxl-3 col-xl-3 col-lg-1 col-md-1 col-sm-1 col-1" data-aos="fade-down">
                             <div className='find_browse_style d-xl-block d-lg-none d-md-none d-sm-none d-none'>
                                 Filters
                             </div>
@@ -91,7 +100,7 @@ export const FindTalent = () => {
                     <div className="row mt-4">
                         <div className="col-xxl-9 col-xl-9 col-lg-12 col-md-12 p-0">
                             <div className="find_t_box pb-3 ps-2">
-                                <div className="row m-0">
+                                <div className="row m-0" data-aos="fade-down">
                                     <div className="col-md-4 p-0">
                                         <Card />
                                     </div>
@@ -102,7 +111,7 @@ export const FindTalent = () => {
                                         <Card />
                                     </div>
                                 </div>
-                                <div className="row m-0">
+                                <div className="row m-0" data-aos="fade-down">
                                     <div className="col-md-4 p-0">
                                         <Card />
                                     </div>
@@ -116,7 +125,7 @@ export const FindTalent = () => {
                             </div>
                         </div>
                         <div className="col-xxl-3 col-xl-3 d-xxl-block d-xl-block d-lg-none d-md-none d-sm-none d-none">
-                            <div className='filter_box pb-2'>
+                            <div className='filter_box pb-2' data-aos="fade-down">
                                 <div className='ps-4 pe-4'>
                                     <div className='d-flex pt-4'>
                                         <div className='input_f_box d-flex'>
@@ -167,7 +176,7 @@ export const FindTalent = () => {
                                     )}
                                 </div>
                             </div>
-                            <div className='filter_box mt-3 pb-1'>
+                            <div className='filter_box mt-3 pb-1' data-aos="fade-down">
                                 <div className='ps-4 pe-4 pt-4'>
                                     <div className='find_browse2_style'>
                                         Followers
@@ -198,7 +207,7 @@ export const FindTalent = () => {
                                         </ReactiveBase>
                                 </div>
                             </div>
-                            <div className='filter_box mt-3 pb-2'>
+                            <div className='filter_box mt-3 pb-2' data-aos="fade-down">
                                 <div className='ps-4 pe-4 pt-4'>
                                     <div className='find_browse2_style'>
                                         Ad price
@@ -229,7 +238,7 @@ export const FindTalent = () => {
                                     </ReactiveBase>
                                 </div>
                             </div>
-                            <div className='filter_box mt-3 pb-2'>
+                            <div className='filter_box mt-3 pb-2' data-aos="fade-down">
                                 <div className='ps-4 pe-4 pt-4'>
                                     <div className='find_browse2_style'>
                                         Stories per day

@@ -61,7 +61,7 @@ export const Sidebar = () => {
           </button>
           <div className='d-flex gap-3'>
             <button className='join_H_button'>
-              <div style={{ color: "yellow" }}>{icons.CrownIcon}</div>
+              <div style={{ marginRight: '8px', color: "yellow", fontSize: "15px" }}>{icons.CrownIcon}</div>
               Join Now
             </button>
             <div className='bell_icon'>{icons.BellFillIcon}</div>
@@ -103,31 +103,33 @@ export const Sidebar = () => {
 
       {/* End of Sidebar */}
 
+      <Foot />
+
       {/* Start of offcanvas */}
 
       <div className="offcanvas offcanvas-start offcan sidebar col-md-1" id="offcanvasExample" aria-labelledby="offcanvasExampleLabel">
         <span className='header_content ps-4' onClick={() => navigate('/landing')}>Resn8</span>
         <div className='d-flex flex-column gap-3'>
-              {tabData.map((tab) => (
-                <button
-                  key={tab.id}
-                  className={`dash_style d-flex gap-2 ps-4 ${activeTab === tab.id ? 'active' : ''}`}
-                  onClick={() => handleTabChange(tab.id)}
-                >
-                  {tab.icon}
-                  {tab.label}
-                </button>
-              ))}
-              <button className='dash_style d-flex gap-2 ps-4 mt-5' onClick={() => navigate('/')}>
-                {icons.LogOutIcon}
-                Logout
-              </button>
-            </div>
+          {tabData.map((tab) => (
+            <button
+              key={tab.id}
+              className={`dash_style d-flex gap-2 ps-4 ${activeTab === tab.id ? 'active' : ''}`}
+              onClick={() => handleTabChange(tab.id)}
+            >
+              {tab.icon}
+              {tab.label}
+            </button>
+          ))}
+          <button className='dash_style d-flex gap-2 ps-4 mt-5' onClick={() => navigate('/')}>
+            {icons.LogOutIcon}
+            Logout
+          </button>
+        </div>
       </div>
 
       {/* End of offcanvas */}
 
-      <Foot />
+
     </section >
   )
 }
