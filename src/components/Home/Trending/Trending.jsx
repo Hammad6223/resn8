@@ -1,5 +1,7 @@
-import React from 'react'
+import React, {useState, useEffect} from 'react'
 import './Trending.css'
+import AOS from 'aos';
+import 'aos/dist/aos.css';
 import Rectangle_one from '../../../assets/images/Rectangle_one.png'
 import Rectangle_two from '../../../assets/images/Rectangle_two.png'
 import Rectangle_three from '../../../assets/images/Rectangle_three.png'
@@ -8,6 +10,13 @@ import Rectangle_five from '../../../assets/images/Rectangle_five.png'
 import { icons } from '../../../Constant/Icons/Icons'
 
 export const Trending = () => {
+
+    useEffect(() => {
+        AOS.init({
+          offset: 300,
+          duration: 1000,
+        });
+      }, []); // Run this effect only once when the component mounts
 
     const data = [
         { image: Rectangle_one, title: "Narration", des: "Discover voices with a range of narrative techniques." },
@@ -22,12 +31,12 @@ export const Trending = () => {
             <div className="container-fluid pt-5 pb-5 bg_landing">
                 <div className="container">
                     <div className="row">
-                        <div className="col">
+                        <div className="col" data-aos="fade-down">
                             <div className='trending_styling'>
                                 Trending Categories
                             </div>
                         </div>
-                        <div className="col d-flex justify-content-end pt-3">
+                        <div className="col d-flex justify-content-end pt-3" data-aos="fade-up">
                             <div className='view_styling'>
                                 View All
                                 {icons.RightarrowIcon}
@@ -36,7 +45,7 @@ export const Trending = () => {
                     </div>
                     <div className="row mt-5" >
                         {data.map((item, index) => (
-                            <div className={`${index === 1 ? 'col-md-8' : 'col-md-4'} p-2`} key={index} style={{position: "relative"}}>
+                            <div className={`${index === 1 ? 'col-md-8 ho' : 'col-md-4 ho'} p-2`} key={index} style={{position: "relative"}} data-aos="fade-down">
                                 <img src={item.image} alt="" style={{width:'100%'}}/>
                                 <div className={`${index === 1 ? 'card_image2' : 'card_image'}`} style={{color: "white"}}>
                                     <p className='trending_title'> {item.title}</p>

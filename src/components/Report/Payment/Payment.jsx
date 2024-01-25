@@ -1,6 +1,8 @@
 import React, { useState } from 'react'
 import './Payment.css'
 import { icons } from '../../../Constant/Icons/Icons';
+import Cardno from '../../../assets/images/cards.png'
+import Idcard from '../../../assets/images/id.png'
 
 export const Payment = () => {
 
@@ -30,11 +32,8 @@ export const Payment = () => {
                                     </label>
                                     <div className='position-relative'>
                                         <input type="text" placeholder='1234 1234 1234 1234' className='input_p_box mt-2' />
-                                        <span className='icon_card d-flex gap-2'>
-                                            <div className='icon_p_style'>{icons.VisaIcon}</div>
-                                            <div className='icon_p_style'>{icons.MastercardIcon}</div>
-                                            <div className='icon_p_style'>{icons.AmexIcon}</div>
-                                            <div className='icon_p_style'>{icons.PaypalIcon}</div>
+                                        <span className='icon_card'>
+                                            <img src={Cardno} alt="" />
                                         </span>
                                     </div>
                                     <div className="row mt-3">
@@ -50,8 +49,8 @@ export const Payment = () => {
                                             </label>
                                             <div className='position-relative'>
                                                 <input type="text" placeholder='CVC' className='input_p_box mt-2' />
-                                                <span className='icon_card d-flex gap-2'>
-                                                    <div className='icon_p_style'>{icons.IdCardIcon}</div>
+                                                <span className='icon_card'>
+                                                    <img src={Idcard} alt="" />
                                                 </span>
                                             </div>
                                         </div>

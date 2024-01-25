@@ -1,5 +1,7 @@
-import React from 'react'
+import React, {useState, useEffect} from 'react'
 import './Find.css'
+import AOS from 'aos';
+import 'aos/dist/aos.css';
 import Carousel from 'react-multi-carousel';
 import 'react-multi-carousel/lib/styles.css';
 import Image from '../../../assets/images/img.png'
@@ -10,6 +12,14 @@ import Mike from '../../../assets/images/mike.png'
 import People from '../../../assets/images/People_group.png'
 
 export const Find = () => {
+
+    useEffect(() => {
+        AOS.init({
+          offset: 300,
+          duration: 1000,
+        });
+      }, []); // Run this effect only once when the component mounts
+
     const responsive = {
         superLargeDesktop: {
             // the naming can be any, depends on you.
@@ -58,23 +68,28 @@ export const Find = () => {
             content: 'Rockfest today',
             subContent: '#Music Podcast',
             image: Slider,
-        },
+        }
     ];
 
     return (
         <>
             <div className="container-fluid pt-5 pb-5 bg_landing">
                 <div className="container">
-                    <div className="row">
+                    <div className="row" data-aos="fade-down">
                         <div className="col">
                             <div className="d-flex justify-content-end">
                                 <p className='trending_name'>Trending Voices</p>
                             </div>
                         </div>
                     </div>
-                    <div className="row mt-4">
+                    <div className="row mt-4" data-aos="fade-down">
                         <div className="col">
-                            <Carousel responsive={responsive}>
+                            <Carousel
+                                autoPlay
+                                responsive={responsive}
+                                infinite={true}
+                                transitionTime={2000}
+                            >
                                 {slidersData.map((slider) => (
                                     <div key={slider.id} className='d-flex gap-5'>
                                         <div>
@@ -94,14 +109,14 @@ export const Find = () => {
                                         </div>
                                     </div>
                                 ))}
-                            </Carousel>;
+                            </Carousel>
                         </div>
                     </div>
                     <div className="row mt-5">
-                        <div className="col-xxl-7 col-xl-7 col-lg-7 col-md-12 col-sm-12">
+                        <div className="col-xxl-7 col-xl-7 col-lg-7 col-md-12 col-sm-12 ho" data-aos="fade-up">
                             <img src={Image} alt="" style={{ width: "100%" }} />
                         </div>
-                        <div className="col-xxl-5 col-xl-5 col-lg-5 col-md-12 col-sm-12">
+                        <div className="col-xxl-5 col-xl-5 col-lg-5 col-md-12 col-sm-12" data-aos="fade-down">
                             <div className='contet_text_style'>
                                 <div className='hire_name'>Find & Hire Your Favorite Voice Talent</div>
                                 <div className='search_name'>Search our extensive database of real talent, with real voices that resonate with your diverse audience.</div>

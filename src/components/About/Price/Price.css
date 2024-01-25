@@ -38,7 +38,16 @@
 }
 
 .card_price {
-    background-color: #1D1D33;
+    background: #09071A;
+    border: 2px solid #1C1C32;
+    width: 100%;
+    height: 797px;
+    border-radius: 17px;
+}
+
+.card_priceone {
+    background: #09051E;
+    border: 2px solid #1C1C32;
     width: 100%;
     height: 797px;
     border-radius: 17px;
@@ -66,7 +75,7 @@
 }
 
 .per_btn {
-    width: 70%;
+    min-width: 50px;
     border: none;
     border-radius: 5px;
     background: var(--primaryColor);
@@ -80,9 +89,6 @@
     line-height: 25px;
     letter-spacing: 0em;
     color: #FFFFFF99;
-    display: flex;
-    justify-content: center;
-    gap: 10px;
 }
 
 .grp_icon {
@@ -136,61 +142,59 @@
     color: var(--whiteColor);
 }
 
-.checkbox {
+.switch{
     width: 100%;
-    max-width: 300px;
-    /* Adjust the maximum width as needed */
     height: 30px;
+    position: relative;
     background: #292B3D;
     border-radius: 30px;
-    position: relative;
-    color: var(--whiteColor);
     overflow: hidden;
     margin-top: 2px;
+    color: var(--whiteColor);
 }
 
-#checkbox_toggle {
-    display: none;
+.switch input{
+    opacity: 0;
+    width: 0;
+    height: 0;
 }
 
-.checkbox .toggle {
-    width: 100px;
-    height: 24px;
+.sliders{
     position: absolute;
-    border-radius: 30px;
-    left: 5px;
     cursor: pointer;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    display: flex;
+    justify-content: space-around;
+    padding: 1px;
+}
+
+.switch .sliders .label_text {
+    font-size: 16px;
+    font-weight: 700;
+    z-index: 100;
+}
+
+.sliders:before{
+    position: absolute;
+    content: "";
+    width: 45%;
+    height: 22px;
+    border-radius: 20px;
+    left: 4px;
+    bottom: 4px;
     background: var(--primaryColor);
     transition: 0.4s;
 }
 
-.checkbox .slide {
-    width: 100%;
-    height: 29px;
-    display: flex;
-    align-items: center;
-    justify-content: space-around;
-    cursor: pointer;
-}
-
-.checkbox .slide .text {
-    font-size: 16px;
-    font-weight: 700;
-    z-index: 100;
-    cursor: pointer;
-}
-
-.check:checked+.checkbox .slide .toggle {
-    /* transform: translateX(128px); */
-    background: var(--primaryColor);
-}
-
-.check:checked+.checkbox .slide {
-    background: #292B3D;
+input:checked + .sliders:before{
+    transform: translateX(112%);
 }
 
 .pro_btn {
-    width: 85%;
+    width: 100%;
     height: 63px;
     border-radius: 5px;
     border: none;
@@ -205,72 +209,46 @@
     letter-spacing: 0em;
     color: var(--whiteColor);
     bottom: 20px;
+    transition: ease-out 0.5s;
 }
 
-@media (min-width: 1200px) and (max-width: 1399px) {
-    .check:checked+.checkbox .slide .toggle {
-        transform: translateX(135px);
-        background: var(--primaryColor);
-    }
+.pro_btn:hover {
+    color: #060317;
+    box-shadow: inset 0 -100px 0 0 var(--whiteColor);
 }
 
-@media (min-width: 992px) and (max-width: 1199px) {
-    .check:checked+.checkbox .slide .toggle {
-        transform: translateX(90px);
-        background: var(--primaryColor);
-    }
+.pro_btn:active {
+    transform: scale(0.9);
 }
 
-@media (min-width: 768px) and (max-width: 991px) {
-    .check:checked+.checkbox .slide .toggle {
-        transform: translateX(85px);
-        background: var(--primaryColor);
-    }
+.pro_b_btn{
+    width: 100%;
+    height: 63px;
+    border-radius: 5px;
+    border: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 1px solid var(--primaryColor);
+    background: none;
+    font-family: Poppins;
+    font-size: 17px;
+    font-weight: 600;
+    line-height: 26px;
+    letter-spacing: 0em;
+    color: var(--primaryColor);
+    bottom: 20px;
+    transition: ease-out 0.5s;
 }
 
-@media (min-width: 576px) and (max-width: 767px) {
-    .check:checked+.checkbox .slide .toggle {
-        transform: translateX(120px);
-        background: var(--primaryColor);
-    }
-    .slider{
-        display: none;
-    }
-    .contact_btn{
-        margin-top: 20px;
-    }
+.pro_b_btn:hover {
+    color: var(--whiteColor);
+    box-shadow: inset 0 -100px 0 0 var(--primaryColor);
 }
 
-@media (max-width: 576px) {
-    .check:checked+.checkbox .slide .toggle {
-        transform: translateX(100%);
-        background: var(--primaryColor);
-    }
-
-    .checkbox .toggle {
-        width: 47%;
-        height: 24px;
-        position: absolute;
-        border-radius: 30px;
-        left: 5px;
-        cursor: pointer;
-        background: var(--primaryColor);
-        transition: 0.4s;
-    }
-
-    .col2 {
-        margin-top: 15px;
-        /* Set your desired margin top value */
-    }
-    .slider{
-        display: none;
-    }
-
-    .contact_btn{
-        margin-top: 20px;
-    }
+.pro_b_btn:active {
+    transform: scale(0.9);
 }
-
 
 .price_box {
     width: 100%;
@@ -326,4 +304,30 @@
     display: flex;
     justify-content: center;
     align-items: center;
+}
+
+@media (min-width: 576px) and (max-width: 768px) {
+    .col2 {
+        margin-top: 15px;
+    }
+
+    .slider{
+        display: none;
+    }
+    .contact_btn{
+        margin-top: 20px;
+    }
+}
+
+@media (max-width: 576px) {
+    .col2 {
+        margin-top: 15px;
+    }
+    .slider{
+        display: none;
+    }
+
+    .contact_btn{
+        margin-top: 20px;
+    }
 }

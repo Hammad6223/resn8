@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import { icons } from '../../../Constant/Icons/Icons'
 
-export const Card = () => {
+export const Cardone = () => {
 
     const [toggle, setToggle] = useState('monthly');
 
@@ -31,7 +31,7 @@ export const Card = () => {
         const features = toggle === 'monthly' ? monthlyFeatures : annuallyFeatures;
 
         return (
-            <div className='d-flex justify-content-center mt-5 positon-relative'>
+            <div className='d-flex justify-content-center mt-5'>
                 <div>
                     {features.map((feature, index) => (
                         <div key={index}>
@@ -52,13 +52,13 @@ export const Card = () => {
 
     return (
         <>
-            <div className="card card_price">
+            <div className="card card_priceone">
                 <div className="card-body mt-5 ms-4 me-4 p-0 position-relative">
-                    <div className='pro_style'>For Pro Talent</div>
+                    <div className='pro_style'>For Pro Buyers</div>
                     <div className="row justify-content-center m-0 mt-2">
-                        <div className="col-xxl-8 col-xl-8 col-lg-9 col-md-12 col-sm-8 col-12 text-center p-0">
+                        <div className="col-xxl-8 col-xl-8 col-lg-10 col-md-12 col-sm-9 col-12 text-center p-0">
                             <div className='per_style'>
-                                $9.99 per user/month
+                                $24.99 per user/month
                             </div>
                         </div>
                         <div className="col-2 p-0 pt-2">
@@ -69,9 +69,9 @@ export const Card = () => {
                         <div className="col-1 p-0 mt-3 d-flex justify-content-end">
                             <div className='grp_icon'>{icons.PeoplegroupIcon}</div>
                         </div>
-                        <div className='col-xxl-7 col-xl-7 col-lg-9 col-md-10 col-sm-8 col-9 p-0 ps-2'>
+                        <div className='col-xxl-4 col-xl-4 col-lg-5 col-md-7 col-sm-4 col-5 p-0 ps-2'>
                             <div className='voice_p_style mt-4'>
-                                Best for professional voice actors
+                                Best for agencies
                             </div>
                         </div>
                     </div>
@@ -92,10 +92,11 @@ export const Card = () => {
                             <div className='line_p_style mt-3'></div>
                         </div>
                     </div>
+
                     {renderFeatures()}
                     <div className='d-flex justify-content-center align-item-center'>
-                        <button className='pro_btn position-absolute'>
-                            Became a Pro Talent
+                        <button className='pro_b_btn position-absolute'>
+                            Became a Pro Buyer
                         </button>
                     </div>
                 </div>

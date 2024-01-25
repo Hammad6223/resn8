@@ -26,10 +26,16 @@ export const OrderHistory = () => {
                             </div>
                         </div>
                         <div className="col-md-3 d-flex justify-content-end">
-                            <button className='month_btn'>
-                                <IoMdArrowDropdown />
-                                This Month
-                            </button>
+                            <div class="dropdown">
+                                <button className="btn month_btn dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
+                                    This Month
+                                </button>
+                                <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+                                    <li><a class="dropdown-item" href="#">January</a></li>
+                                    <li><a class="dropdown-item" href="#">February</a></li>
+                                    <li><a class="dropdown-item" href="#">March</a></li>
+                                </ul>
+                            </div>
                         </div>
                     </div>
                     <div className="row mt-4">

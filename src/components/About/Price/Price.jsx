@@ -1,9 +1,43 @@
-import React from 'react'
+import React, { useState, useEffect } from 'react'
 import './Price.css'
+import AOS from 'aos';
+import 'aos/dist/aos.css';
 import { Card } from './Card'
+import { Cardone } from './Cardone'
 import { icons } from '../../../Constant/Icons/Icons'
 
 export const Price = () => {
+
+  useEffect(() => {
+    AOS.init({
+      offset: 300,
+      duration: 1000,
+    });
+  }, []); // Run this effect only once when the component mounts
+
+  const PriceCircle = ({ text, colWidth }) => (
+    <div className={`col-md-${colWidth} col-lg-${colWidth} col-xl-${colWidth} col-xxl-${colWidth} p-0 ps-1`}>
+      <div className="price_circle">
+        {text}
+      </div>
+    </div>
+  );
+
+  const priceItems = [
+    { text: 'Unlimited voice generation', colWidth: 2 },
+    { text: 'Custom Pricing', colWidth: 2 },
+    { text: '24/7 Dedicated Support', colWidth: 2 },
+    { text: 'Dedicated Slack Channel', colWidth: 3 },
+    { text: 'Unlimited Character Limit', colWidth: 3 },
+  ];
+
+  const secondpriceItems = [
+    { text: 'Dedicated Slack channel', colWidth: 2 },
+    { text: 'Whiteglove onboarding support', colWidth: 3 },
+    { text: 'SCIM', colWidth: 1 },
+    { text: 'Dedicated Slack Channel', colWidth: 3 },
+    { text: 'Whiteglove onboarding support', colWidth: 3 },
+  ];
 
   return (
     <section>
@@ -20,15 +54,15 @@ export const Price = () => {
             </div>
           </div>
           <div className="row mt-5 justify-content-center">
-            <div className="col-xxl-5 col-xl-6 col-lg-6 col-md-6">
+            <div className="col-xxl-5 col-xl-6 col-lg-6 col-md-6" data-aos="fade-up">
               <Card />
             </div>
-            <div className="col-xxl-5 col-xl-6 col-lg-6 col-md-6 ps-3 col2">
-              <Card />
+            <div className="col-xxl-5 col-xl-6 col-lg-6 col-md-6 ps-3 col2" data-aos="fade-down">
+              <Cardone />
             </div>
           </div>
           <div className="row mt-5 justify-content-center">
-            <div className="col-xxl-8">
+            <div className="col-xxl-8" data-aos="fade-up">
               <div className="price_box">
                 <div className="ps-5 pe-5">
                   <div className="enter_text pt-5">
@@ -48,58 +82,14 @@ export const Price = () => {
                   </div>
                 </div>
                 <div className='row mt-5 m-0 slider'>
-                  <div className="col-md-3 col-lg-2 col-xl-2 col-xxl-2 p-0">
-                    <div className="price_circle">
-                      Unlimited voice generation
-                    </div>
-                  </div>
-                  <div className="col-md-2 col-lg-2 col-xl-2 col-xxl-2 p-0 ps-1">
-                    <div className="price_circle">
-                      Custom Pricing
-                    </div>
-                  </div>
-                  <div className="col-md-2 col-lg-2 col-xl-2 col-xxl-2 p-0 ps-1">
-                    <div className="price_circle">
-                      24/7 Dedicated Support
-                    </div>
-                  </div>
-                  <div className="col-md-2 col-lg-3 col-xl-3 col-xxl-3 p-0 ps-1">
-                    <div className="price_circle">
-                      Dedicated Slack Channel
-                    </div>
-                  </div>
-                  <div className="col-md-3 col-lg-3 col-xl-3 col-xxl-3 p-0 ps-1">
-                    <div className="price_circle">
-                      Unlimited Character Limit
-                    </div>
-                  </div>
+                  {priceItems.map((item, index) => (
+                    <PriceCircle key={index} text={item.text} colWidth={item.colWidth} />
+                  ))}
                 </div>
                 <div className='row mt-4 m-0 slider'>
-                  <div className="col-md-2 col-lg-2 col-xl-2 col-xxl-2 p-0">
-                    <div className="price_circle">
-                      Dedicated Slack channel
-                    </div>
-                  </div>
-                  <div className="col-md-3 col-lg-2 col-xl-2 col-xxl-3 p-0 ps-1">
-                    <div className="price_circle">
-                      Whiteglove onboarding support
-                    </div>
-                  </div>
-                  <div className="col-md-1 col-lg-2 col-xl-2 col-xxl-1 p-0 ps-1">
-                    <div className="price_circle">
-                      SCIM
-                    </div>
-                  </div>
-                  <div className="col-md-3 col-lg-3 col-xl-3 col-xxl-3 p-0 ps-1">
-                    <div className="price_circle">
-                      Dedicated Slack Channel
-                    </div>
-                  </div>
-                  <div className="col-md-3 col-lg-3 col-xl-3 col-xxl-3 p-0 ps-1">
-                    <div className="price_circle">
-                      Whiteglove onboarding support
-                    </div>
-                  </div>
+                  {secondpriceItems.map((item, index) => (
+                    <PriceCircle key={index} text={item.text} colWidth={item.colWidth} />
+                  ))}
                 </div>
               </div>
             </div>

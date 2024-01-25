@@ -109,7 +109,7 @@
 
 .month_btn_d {
     width: 100%;
-    max-width: 90px;
+    max-width: 100px;
     height: 35px;
     border-radius: 6px;
     background: var(--primaryColor);
