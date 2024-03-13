@@ -9,6 +9,14 @@ export const Card = () => {
         setToggle(value);
     };
 
+    const renderFee = () => {
+        if (toggle === 'monthly') {
+            return '$9.99 per user/month';
+        } else {
+            return '$119.88 per user/annual';
+        }
+    };
+
     const renderFeatures = () => {
         const monthlyFeatures = [
             'Ability to clone your voice style',
@@ -56,9 +64,9 @@ export const Card = () => {
                 <div className="card-body mt-5 ms-4 me-4 p-0 position-relative">
                     <div className='pro_style'>For Pro Talent</div>
                     <div className="row justify-content-center m-0 mt-2">
-                        <div className="col-xxl-8 col-xl-8 col-lg-9 col-md-12 col-sm-8 col-12 text-center p-0">
+                        <div className="col-xxl-9 col-xl-8 col-lg-10 col-md-12 col-sm-12 col-12 text-center p-0">
                             <div className='per_style'>
-                                $9.99 per user/month
+                            {renderFee()}
                             </div>
                         </div>
                         <div className="col-2 p-0 pt-2">

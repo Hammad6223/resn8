@@ -9,6 +9,14 @@ export const Cardone = () => {
         setToggle(value);
     };
 
+    const renderFee = () => {
+        if (toggle === 'monthly') {
+            return '$24.99 per user/month';
+        } else {
+            return '$299.88 per user/annual';
+        }
+    };
+
     const renderFeatures = () => {
         const monthlyFeatures = [
             'Ability to clone your voice style',
@@ -56,9 +64,9 @@ export const Cardone = () => {
                 <div className="card-body mt-5 ms-4 me-4 p-0 position-relative">
                     <div className='pro_style'>For Pro Buyers</div>
                     <div className="row justify-content-center m-0 mt-2">
-                        <div className="col-xxl-8 col-xl-8 col-lg-10 col-md-12 col-sm-9 col-12 text-center p-0">
+                        <div className="col-xxl-9 col-xl-9 col-lg-10 col-md-12 col-sm-9 col-12 text-center p-0">
                             <div className='per_style'>
-                                $24.99 per user/month
+                            {renderFee()}
                             </div>
                         </div>
                         <div className="col-2 p-0 pt-2">
@@ -69,7 +77,7 @@ export const Cardone = () => {
                         <div className="col-1 p-0 mt-3 d-flex justify-content-end">
                             <div className='grp_icon'>{icons.PeoplegroupIcon}</div>
                         </div>
-                        <div className='col-xxl-4 col-xl-4 col-lg-5 col-md-7 col-sm-4 col-5 p-0 ps-2'>
+                        <div className='col-xxl-4 col-xl-4 col-lg-5 col-md-7 col-sm-4 col-6 p-0 ps-2'>
                             <div className='voice_p_style mt-4'>
                                 Best for agencies
                             </div>

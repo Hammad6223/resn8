@@ -17,7 +17,7 @@ export const OrderHistory = () => {
 
     return (
         <section>
-            <div className="container-fluid dashboard_bg pb-3">
+            <div className="container-fluid dashboard_bg order_payment pb-3">
                 <div className="container pt-4">
                     <div className="row">
                         <div className="col-md-9">

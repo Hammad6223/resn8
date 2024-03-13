@@ -5,16 +5,16 @@ export const Setting = () => {
 
     const InputField = ({ label, type, placeholder, className, mt = 2 }) => (
         <div className={`col-md-6 mt-${mt}`}>
-            <label className={`account_p_style ${label === "Email" || label === "Company" ? label : ""}`}>
+            <label className={`label_style ${label === "Email" || label === "Company" ? label : ""}`}>
                 {label}
             </label>
-            <input type={type} placeholder={`Enter Your ${label}`} className={`input_p_box mt-2 ${className}`} />
+            <input type={type} placeholder={`Enter Your ${label}`} className={`input_style ps-3 mt-2 ${className}`} />
         </div>
     );
 
     return (
         <section>
-            <div className="container-fluid dashboard_bg pb-3">
+            <div className="container-fluid dashboard_bg setting pb-3">
                 <div className="container pt-4">
                     <div className="row">
                         <div className="col-md-12">

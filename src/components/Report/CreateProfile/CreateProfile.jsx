@@ -20,11 +20,11 @@ export const CreateProfile = () => {
         }));
     };
 
-    const CommonInput = ({ label, type, placeholder, value, onChange, icon }) => (
+    const CommonInput = ({ label, type, placeholder, value, onChange, icon, readOnly }) => (
         <>
-            <label className={`account_p_style ${label.replace(/\s+/g, '')}`}>{label}</label>
+            <label className={`label_style ${label.replace(/\s+/g, '')}`}>{label}</label>
             <div className='custom-dropdown'>
-                <input type={type} placeholder={placeholder} className="input_p_box mt-2" value={value} onChange={onChange} />
+                <input type={type} placeholder={placeholder} className="input_style ps-3 mt-2" value={value} onChange={onChange}  readOnly={readOnly} style={readOnly ? { cursor: 'pointer' } : {}} />
                 {icon && <div className="dropdown-icon">{icon}</div>}
             </div>
         </>
@@ -32,9 +32,9 @@ export const CreateProfile = () => {
 
     const CommonDropdown = ({ label, options, value, onChange, icon }) => (
         <>
-            <label className={`account_p_style ${label.replace(/\s+/g, '')}`}>{label}</label>
-            <div className="custom-dropdown mt-1">
-                <select className="style_input" value={value} onChange={(e) => onChange(e)}>
+            <label className={`label_style ${label.replace(/\s+/g, '')}`}>{label}</label>
+            <div className="custom-dropdown">
+                <select className="input_style ps-3 mt-2" style={{appearance: "none"}} value={value} onChange={(e) => onChange(e)}>
                     <option value="" disabled hidden>Select Your {label}</option>
                     {options.map((option) => (
                         <option key={option.value} value={option.value}>
@@ -52,7 +52,7 @@ export const CreateProfile = () => {
 
     return (
         <section>
-            <div className="container-fluid dashboard_bg pb-3">
+            <div className="container-fluid dashboard_bg create_profile pb-3">
                 <div className="container pt-4">
                     <div className="row">
                         <div className="col-md-10">
@@ -111,7 +111,7 @@ export const CreateProfile = () => {
                                             />
                                         </div>
                                         <div className="col-md-6">
-                                            <CommonInput label="Upload Voice Sample" type="text" placeholder="Upload Your Voice Sample" icon={icons.AttachIcon} />
+                                            <CommonInput label="Upload Voice Sample" type="text" placeholder="Upload Your Voice Sample" icon={icons.AttachIcon} readOnly/>
                                         </div>
                                     </div>
                                     <div className="row mt-3">
@@ -145,7 +145,7 @@ export const CreateProfile = () => {
                                             />
                                         </div>
                                         <div className="col-md-6">
-                                            <CommonInput label="Profile Picture" type="text" placeholder="Upload Your Photo" icon={icons.PhotoCameraIcon} />
+                                            <CommonInput label="Profile Picture" type="text" placeholder="Upload Your Photo" icon={icons.PhotoCameraIcon} readOnly/>
                                         </div>
                                     </div>
                                     <div className="row mt-3">

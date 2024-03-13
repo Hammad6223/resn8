@@ -1,5 +1,6 @@
 import React, { useState } from 'react'
 import './Payment.css'
+import { PaymentModal } from './PaymentModal';
 import { icons } from '../../../Constant/Icons/Icons';
 import Cardno from '../../../assets/images/cards.png'
 import Idcard from '../../../assets/images/id.png'
@@ -14,7 +15,7 @@ export const Payment = () => {
 
     return (
         <section>
-            <div className="container-fluid dashboard_payment_bg">
+            <div className="container-fluid dashboard_payment_bg payment">
                 <div className="container pt-4">
                     <div className="row">
                         <div className="col-md-12">
@@ -27,28 +28,28 @@ export const Payment = () => {
                         <div className="col-md-12">
                             <div className="order_box pb-5">
                                 <div className='ps-3 pe-3 pt-4'>
-                                    <label className='account_p_style'>
+                                    <label className='label_style'>
                                         Account Name
                                     </label>
                                     <div className='position-relative'>
-                                        <input type="text" placeholder='1234 1234 1234 1234' className='input_p_box mt-2' />
+                                        <input type="text" placeholder='1234 1234 1234 1234' className='input_style ps-3 mt-2' />
                                         <span className='icon_card'>
                                             <img src={Cardno} alt="" />
                                         </span>
                                     </div>
                                     <div className="row mt-3">
                                         <div className="col-md-6">
-                                            <label className='account_p_style'>
+                                            <label className='label_style'>
                                                 Account Number
                                             </label>
-                                            <input type="text" placeholder='MM / YY' className='input_p_box mt-2' />
+                                            <input type="text" placeholder='MM / YY' className='input_style ps-3 mt-2' />
                                         </div>
                                         <div className="col-md-6">
-                                            <label className='account_p_style CVC'>
+                                            <label className='label_style'>
                                                 CVC
                                             </label>
                                             <div className='position-relative'>
-                                                <input type="text" placeholder='CVC' className='input_p_box mt-2' />
+                                                <input type="text" placeholder='CVC' className='input_style ps-3 mt-2' />
                                                 <span className='icon_card'>
                                                     <img src={Idcard} alt="" />
                                                 </span>
@@ -57,11 +58,12 @@ export const Payment = () => {
                                     </div>
                                     <div className="row mt-3">
                                         <div className="col-md-6">
-                                            <label className='account_p_style'>
+                                            <label className='label_style'>
                                                 Routing Number
                                             </label>
-                                            <div className="custom-dropdown mt-1">
-                                                <select className='style_input'
+                                            <div className="custom-dropdown">
+                                                <select className='input_style ps-3 mt-2'
+                                                    style={{appearance: "none"}}
                                                     value={selectedValue}
                                                     onChange={handleSelectChange}
                                                 >
@@ -74,16 +76,14 @@ export const Payment = () => {
                                             </div>
                                         </div>
                                         <div className="col-md-6">
-                                            <label className='account_p_style ZIP'>
+                                            <label className='label_style'>
                                                 ZIP
                                             </label>
-                                            <input type="text" placeholder='01234' className='input_p_box mt-2' />
+                                            <input type="text" placeholder='01234' className='input_style ps-3 mt-2' />
                                         </div>
                                     </div>
                                     <div className='d-flex justify-content-end mt-4'>
-                                        <button className='payment_btn'>
-                                            Save Payment
-                                        </button>
+                                        <PaymentModal />
                                     </div>
                                 </div>
                             </div>

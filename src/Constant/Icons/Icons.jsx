@@ -57,6 +57,12 @@ import { LiaSmsSolid } from "react-icons/lia";
 import { IoIosLogOut } from "react-icons/io";
 import { MdFilterAlt } from "react-icons/md";
 import { IoMdArrowDropup } from "react-icons/io";
+import { FaPlay } from "react-icons/fa";
+import { FaPause } from "react-icons/fa";
+import { FaBookmark } from "react-icons/fa";
+import { MdKeyboardArrowRight } from "react-icons/md";
+import { MdKeyboardArrowLeft } from "react-icons/md";
+import { IoMaleFemaleOutline } from "react-icons/io5";
 
 
 
@@ -98,7 +104,7 @@ export const icons = {
     HeartIcon: <CiHeart />,
     GenderIcon: <MdOutlineTransgender />,
     PricetagIcon: <IoPricetagOutline />,
-    GoGoalIcon: <GoGoal />,
+    PurposeIcon: <GoGoal />,
     CircleDotIcon: <FaRegCircleDot />,
     CircleIcon: <FaRegCircle />,
     InstagramfillIcon: <AiFillInstagram />,
@@ -126,5 +132,11 @@ export const icons = {
     LiaSmsSolid: <LiaSmsSolid />,
     LogOutIcon: <IoIosLogOut />,
     FilterAlt: <MdFilterAlt />,
-    ArrowDropup: <IoMdArrowDropup />
+    ArrowDropup: <IoMdArrowDropup />,
+    Playbtnicon: <FaPlay />,
+    Pausebtnicon: <FaPause />,
+    Bookmarkicon: <FaBookmark />,
+    Nexticon: <MdKeyboardArrowRight />,
+    Previcon: <MdKeyboardArrowLeft />,
+
 };

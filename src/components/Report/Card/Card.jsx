@@ -1,61 +1,45 @@
-import React from 'react'
-import Images from '../../../assets/images/card.png'
-import Tick from '../../../assets/images/Vector01.png'
-import Play from '../../../assets/images/Play.png'
-import { icons } from '../../../Constant/Icons/Icons';
+import React, { useState } from 'react'
+import 'bootstrap/dist/js/bootstrap.bundle.min.js';
+import { useDispatch, useSelector } from 'react-redux';
+import { toggleSaved } from '../../../Redux/Slice/savedCardsSlice';
+import datas from './data'
+import { CloneModal } from './CloneModal';
 
-export const Card = () => {
+export const Card = ({ cardsPerPage, currentPage }) => {
 
-    const data = [
-        {
-            name: 'Anne Hathway',
-            price: '$900',
-            completedOrders: '249 Completed Orders',
-            socialMedia: [
-                { icon: <div className='d-flex justify-content-center align-item-center' style={{color: "white"}}>{icons.InstagramfillIcon}</div>, platform: 'Instagram' },
-                { icon: <div className='d-flex justify-content-center align-item-center' style={{color: "white"}}>{icons.YoutubefillIcon}</div>, platform: 'Youtube' },
-                { icon: <div className='d-flex justify-content-center align-item-center' style={{color: "white"}}>{icons.TwitterIcon}</div>, platform: 'Twitter' },
-                { icon: <div className='d-flex justify-content-center align-item-center' style={{color: "white"}}>{icons.TiktokfillIcon}</div>, platform: 'Tiktok' }
-            ],
-            language: 'English',
-            gender: {
-                title: 'Gender',
-                value: 'Adult - Female'
-            },
-            accent: {
-                title: 'Accent',
-                value: 'Select Voice'
-            },
-            tone: {
-                title: 'Tone',
-                value: 'Request Customer Order'
-            },
-            purpose: {
-                title: 'Purpose',
-                value: 'Video narration, TV',
-                subValue: 'E-learning'
-            }
-        }
-    ];
+    const dispatch = useDispatch();
+    const { cards } = useSelector((state) => state.savedCards);
+    console.log("redxx>>>>Cards:", cards)
+
+    const handleToggleSaved = (data) => {
+        dispatch(toggleSaved(data));
+    };
+
+    const indexOfLastCard = currentPage * cardsPerPage;
+    const indexOfFirstCard = indexOfLastCard - cardsPerPage;
+    const currentCards = datas.slice(indexOfFirstCard, indexOfLastCard);
 
     return (
         <>
-            {data.map((item, index) => (
-                <div key={index} className="col pe-2 p-0 mt-3">
-                    <div className="card find_card pb-3">
-                        <div className='ps-2 pe-2'>
+            <div className="row m-0">
+                {currentCards.map((item, id) => (
+                    <div key={id} className="col-md-4 p-0 pe-2 mb-4">
+                        <div className="card find_card ps-2 pe-2 pb-3">
                             <div className='position-relative'>
-                                <img src={Images} alt="..." style={{ width: "100%", paddingTop: "10px" }} />
+                                <div className={`save_style ${cards.some((card) => card === item) ? 'saved' : ''}`} onClick={() => handleToggleSaved(item)}>
+                                    {item.bookmarkicon.bookmark}
+                                </div>
+                                <img src={item.imagecard} alt="..." style={{ width: "100%", paddingTop: "10px" }} />
                                 <div className='d-flex position-absolute img_position justify-content-between ps-2 pe-2'>
-                                    <div className='circle_icon'>{icons.ArrowDropleftCircle}</div>
-                                    <img src={Play} alt="" style={{width: "20%"}} />
-                                    <div className='circle_icon'>{icons.ArrowDroprightCircle}</div>
+                                    <div className='circle_icon'>{item.leftarrowicon.left}</div>
+                                    <img src={item.imageplay} alt="" style={{ width: "20%", cursor: "pointer" }} />
+                                    <div className='circle_icon'>{item.rightarrowicon.right}</div>
                                 </div>
                             </div>
-                            <div className='d-flex mt-2 gap-5'>
+                            <div className='d-flex mt-2 justify-content-between'>
                                 <div className='find_browse2_style'>
                                     {item.name}
-                                    <img src={Tick} alt="" className='ps-2' />
+                                    <img src={item.imagetick} alt="" className='ps-2' />
                                 </div>
                                 <div className='p_style'>
                                     {item.price}
@@ -66,13 +50,13 @@ export const Card = () => {
                                     {item.completedOrders}
                                 </div>
                                 <div className='com_style'>
-                                    Price
+                                    {item.tag}
                                 </div>
                             </div>
                             <div className='d-flex justify-content-between mt-2'>
                                 <div className='d-flex gap-1'>
                                     {item.socialMedia.map((social, idx) => (
-                                        <div key={idx} className='find_circles d-flex justify-content-center align-items-center'>
+                                        <div key={idx} className='find_circles'>
                                             {social.icon}
                                         </div>
                                     ))}
@@ -120,25 +104,21 @@ export const Card = () => {
                                 </div>
                             </div>
                             <div className='d-flex gap-3 mt-3'>
-                                <div className='find_circles d-flex justify-content-center align-items-center'>
-                                   <div className='d-flex justify-content-center align-item-center' style={{color: "white"}}>{icons.SaveIcon}</div> 
+                                <div className='find_circles'>
+                                    {item.cloneicon.clone}
                                 </div>
-                                <button className='gender_style clone_btn'>
-                                    Clone Voice
-                                </button>
+                                <CloneModal />
                             </div>
                             <div className='d-flex gap-3 mt-2'>
-                                <div className='find_circles d-flex justify-content-center align-items-center'>
-                                   <div className='d-flex justify-content-center align-item-center' style={{color: "white"}}>{icons.IoMailIcon}</div>
+                                <div className='find_circles'>
+                                    {item.messageicon.message}
                                 </div>
-                                <button className='gender_style clone_btn'>
-                                    Clone Voice
-                                </button>
+                                <CloneModal />
                             </div>
                         </div>
                     </div>
-                </div>
-            ))}
+                ))}
+            </div>
         </>
     )
 }

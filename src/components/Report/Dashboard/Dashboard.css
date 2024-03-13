@@ -8,6 +8,8 @@
 
 .dashboard_bg {
     background: #060317;
+    padding-top: 70px;
+    height: 93.5vh;
 }
 
 .dashboard_payment_bg{

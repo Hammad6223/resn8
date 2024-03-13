@@ -6,6 +6,11 @@
     box-sizing: border-box;
 }
 
+.custom_support{
+    padding-top: 70px;
+    height: 105vh;
+}
+
 .chat_box {
     width: 100%;
     border-top-right-radius: 10px;

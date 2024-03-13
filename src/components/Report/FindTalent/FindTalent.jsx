@@ -7,42 +7,87 @@ import Accent from '../../../assets/images/acct.png'
 import { ReactiveBase, RangeSlider } from '@appbaseio/reactivesearch';
 import { Card } from '../Card/Card';
 import { Offcanvas } from './Offcanvas';
+import datas from '../Card/data';
 import { icons } from '../../../Constant/Icons/Icons';
 
 export const FindTalent = () => {
 
-    const [showCheckboxes, setShowCheckboxes] = useState(false);
+    const [showCheckboxes, setShowCheckboxes] = useState({
+        Tone: false,
+        Accent: false,
+        Gender: false,
+        Price: false,
+        Purpose: false,
+    });
+    const [checkboxes, setCheckboxes] = useState({});
     const [selectedOption, setSelectedOption] = useState(null);
+    const [currentPage, setCurrentPage] = useState(1);
+
+    const cardsPerPage = 6;
+    const handlePageChange = (newPage) => {
+        setCurrentPage(newPage);
+    };
 
     useEffect(() => {
         AOS.init({
-          offset: 300,
-          duration: 1000,
+            offset: 300,
+            duration: 1000,
         });
-      }, []); // Run this effect only once when the component mounts
+    }, []); // Run this effect only once when the component mounts
 
-    const checkboxesData = [
-        { name: "lifestyle", label: "Lifestyle" },
-        { name: "sports", label: "Sports" },
-        { name: "music", label: "Music" },
-        { name: "comedy", label: "Comedy" },
-        { name: "games", label: "Games" },
-        { name: "fashion", label: "Fashion" },
-    ];
 
-    const [checkboxes, setCheckboxes] = useState(() => {
-        const initialCheckboxesState = {};
-        checkboxesData.forEach(({ name }) => {
-            initialCheckboxesState[name] = false;
-        });
-        return initialCheckboxesState;
-    });
+
+    const checkboxesOptions = {
+        Tone: [
+            "Bass", "Baritone", "Tenor", "Alto", "Mezzo-soprano", "Soprano"
+        ],
+        Accent: [
+            "Classical", "Jazz", "Blues", "Rock", "Latin", "Hip Hop"
+        ],
+        Gender: [
+            "Male", "Female", "Agender"
+        ],
+        Price: [
+            "100", "1000", "100000"
+        ],
+        Purpose: [
+            "Lifestyle", "Sports", "Music", "Comedy", "Games", "Fashion"
+        ],
+    };
 
     const handleCheckboxChange = (name) => {
         setCheckboxes((prevCheckboxes) => ({
             ...prevCheckboxes,
             [name]: !prevCheckboxes[name],
         }));
+    };
+
+    const handleDropdownClick = (dropdownType) => {
+        setShowCheckboxes((prevShowCheckboxes) => ({
+            ...prevShowCheckboxes,
+            [dropdownType]: !prevShowCheckboxes[dropdownType],
+        }));
+    };
+
+    const DropdownItem = ({ image, icon, label, dropdownType }) => {
+        const getDropdownIcon = (dropdownType) => {
+            return showCheckboxes[dropdownType] ? icons.ArrowDropup : icons.DropIcon;
+        };
+        return (
+            <div className="d-flex justify-content-between mt-4">
+                <div className="find_browse2_style d-flex gap-2 pt-2">
+                    {image && image[dropdownType] && <img src={image[dropdownType]} alt="" />}
+                    {icon && icon[dropdownType]}
+                    {label}
+                </div>
+                <div
+                    style={{ color: "white", fontSize: "25px", cursor: "pointer" }}
+                    onClick={() => handleDropdownClick(dropdownType)}
+                >
+                    {getDropdownIcon(dropdownType)}
+                </div>
+            </div>
+        );
     };
 
     const radioOptions = [
@@ -56,31 +101,10 @@ export const FindTalent = () => {
         setSelectedOption(id);
     };
 
-    const DropdownItem = ({ image, icon, label, onClick }) => (
-        <div className='d-flex justify-content-between mt-4'>
-            <div className='find_browse2_style d-flex gap-2'>
-                {image && <img src={image} alt="" />}
-                {icon}
-                {label}
-            </div>
-            <div
-                style={{ color: "white", fontSize: "25px", cursor: "pointer" }}
-                onClick={onClick}
-            >
-                {label === "Purpose" && (
-                    <>
-                        {showCheckboxes ? icons.DropIcon : icons.ArrowDropup}
-                        {icons.ArrowDropdown}
-                    </>
-                )}
-                {label !== "Purpose" && icons.DropIcon}
-            </div>
-        </div>
-    );
 
     return (
         <section>
-            <div className="container-fluid dashboard_bg pb-3">
+            <div className="container-fluid dashboard_bg find_talent pb-3">
                 <div className="container pt-4">
                     <div className="row">
                         <div className="col-xxl-9 col-xl-9 col-lg-11 col-md-11 col-sm-11 col-10" data-aos="fade-up">
@@ -98,41 +122,24 @@ export const FindTalent = () => {
                         </div>
                     </div>
                     <div className="row mt-4">
-                        <div className="col-xxl-9 col-xl-9 col-lg-12 col-md-12 p-0">
-                            <div className="find_t_box pb-3 ps-2">
-                                <div className="row m-0" data-aos="fade-down">
-                                    <div className="col-md-4 p-0">
-                                        <Card />
-                                    </div>
-                                    <div className="col-md-4 p-0">
-                                        <Card />
-                                    </div>
-                                    <div className="col-md-4 p-0">
-                                        <Card />
-                                    </div>
-                                </div>
-                                <div className="row m-0" data-aos="fade-down">
-                                    <div className="col-md-4 p-0">
-                                        <Card />
-                                    </div>
-                                    <div className="col-md-4 p-0">
-                                        <Card />
-                                    </div>
-                                    <div className="col-md-4 p-0">
-                                        <Card />
+                        <div className="col-xxl-9 col-xl-9 col-lg-12 col-md-12 p-0" data-aos="fade-down">
+                            <div className="find_t_box ps-2">
+                                <div className="row m-0">
+                                    <div className="col-md-12 mt-4 p-0 mb-2">
+                                        <Card cardsPerPage={cardsPerPage} currentPage={currentPage} />
                                     </div>
                                 </div>
                             </div>
                         </div>
-                        <div className="col-xxl-3 col-xl-3 d-xxl-block d-xl-block d-lg-none d-md-none d-sm-none d-none">
+                        <div className="col-xxl-3 col-xl-3 d-xxl-block d-xl-block d-lg-none d-md-none d-sm-none d-none" data-aos="fade-down">
                             <div className='filter_box pb-2' data-aos="fade-down">
                                 <div className='ps-4 pe-4'>
                                     <div className='d-flex pt-4'>
-                                        <div className='input_f_box d-flex'>
-                                            <div className='d-flex gap-2 ps-2 align-items-center'>
-                                                <div style={{ color: "grey" }}>{icons.SearchIcon}</div>
-                                                <input type="text" className='input_field_f mt-1' placeholder='Search Voice' />
-                                            </div>
+                                        <div className='position-relative'>
+                                            <span className='mail_s_icon'>
+                                                {icons.SearchIcon}
+                                            </span>
+                                            <input type="text" placeholder='Search Voice' className='input_f_box' />
                                         </div>
                                         <button className='find_f_btn gender_style'>
                                             Find
@@ -141,39 +148,41 @@ export const FindTalent = () => {
                                     <button className='save_f_btn find_browse2_style mt-3'>
                                         {icons.HeartIcon} Save Search
                                     </button>
-                                    <DropdownItem label="Tone" image={Tone} />
-                                    <DropdownItem label="Accent" image={Accent} />
-                                    <DropdownItem label="Gender" icon={icons.GenderIcon} />
-                                    <DropdownItem label="Price" icon={icons.PricetagIcon} />
-                                    <DropdownItem
-                                        label="Purpose"
-                                        icon={icons.GoGoalIcon}
-                                        onClick={() => setShowCheckboxes(!showCheckboxes)}
-                                    />
-                                    {showCheckboxes && (
-                                        <div>
-                                            {checkboxesData.map(({ name, label }) => (
-                                                <div
-                                                    key={name}
-                                                    className="d-flex ps-5 justify-content-between mt-3"
-                                                >
-                                                    <div className="find_browse2_style">{label}</div>
-                                                    <label className="checkbox-label">
-                                                        <input
-                                                            type="checkbox"
-                                                            name={name}
-                                                            checked={checkboxes[name]}
-                                                            onChange={() => handleCheckboxChange(name)}
-                                                            style={{ display: "none" }}
-                                                        />
-                                                        <span className="check_find">
-                                                            {checkboxes[name] ? icons.CheckboxIcon : icons.UnCheckboxIcon}
-                                                        </span>
-                                                    </label>
+                                    {Object.keys(showCheckboxes).map((dropdownType) => (
+                                        <div key={dropdownType}>
+                                            <DropdownItem
+                                                label={dropdownType}
+                                                image={{ Tone: Tone, Accent: Accent }}
+                                                icon={{ Gender: icons.GenderIcon, Price: icons.PricetagIcon, Purpose: icons.PurposeIcon }}
+                                                dropdownType={dropdownType}
+                                                onClick={() => handleDropdownClick(dropdownType)}
+                                            />
+                                            {showCheckboxes[dropdownType] && (
+                                                <div>
+                                                    {checkboxesOptions[dropdownType].map((option) => (
+                                                        <div
+                                                            key={option}
+                                                            className="d-flex ps-5 justify-content-between mt-3"
+                                                        >
+                                                            <div className="find_browse2_style">{option}</div>
+                                                            <label className="checkbox-label">
+                                                                <input
+                                                                    type="checkbox"
+                                                                    name={option}
+                                                                    checked={checkboxes[option]}
+                                                                    onChange={() => handleCheckboxChange(option)}
+                                                                    style={{ display: "none" }}
+                                                                />
+                                                                <span className="check_find">
+                                                                    {checkboxes[option] ? icons.CheckboxIcon : icons.UnCheckboxIcon}
+                                                                </span>
+                                                            </label>
+                                                        </div>
+                                                    ))}
                                                 </div>
-                                            ))}
+                                            )}
                                         </div>
-                                    )}
+                                    ))}
                                 </div>
                             </div>
                             <div className='filter_box mt-3 pb-1' data-aos="fade-down">
@@ -190,21 +199,21 @@ export const FindTalent = () => {
                                         </div>
                                     </div>
                                     <ReactiveBase
-                                            app="your_app_name"
-                                            credentials="your_credentials"
-                                            url="https://appbase-demo-ansible-abxiydt-arc.searchbase.io"
-                                        >
-                                            <RangeSlider
-                                                componentId="PriceSensor"
-                                                dataField="price"
-                                                className='custom-range-slider' // Use a custom class for styling
-                                                range={{ start: 0, end: 300000 }}
-                                                defaultValue={{
-                                                    start: 10,
-                                                    end: 225000
-                                                }}
-                                            />
-                                        </ReactiveBase>
+                                        app="your_app_name"
+                                        credentials="your_credentials"
+                                        url="https://appbase-demo-ansible-abxiydt-arc.searchbase.io"
+                                    >
+                                        <RangeSlider
+                                            componentId="PriceSensor"
+                                            dataField="price"
+                                            className='custom-range-slider' // Use a custom class for styling
+                                            range={{ start: 0, end: 300000 }}
+                                            defaultValue={{
+                                                start: 10,
+                                                end: 225000
+                                            }}
+                                        />
+                                    </ReactiveBase>
                                 </div>
                             </div>
                             <div className='filter_box mt-3 pb-2' data-aos="fade-down">
@@ -261,6 +270,22 @@ export const FindTalent = () => {
                                         </div>
                                     ))}
                                 </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div className="row mt-2">
+                        <div className="col">
+                            <div className='d-flex justify-content-center align-item-center gap-3'>
+                                <button
+                                    className='pagination_btn'
+                                    onClick={() => handlePageChange(currentPage - 1)}
+                                    disabled={currentPage === 1}>{icons.Previcon}</button>
+                                <p className='pt-3' style={{ color: "white" }}>{currentPage} of {Math.ceil(datas.length / cardsPerPage)}</p>
+                                <button
+                                    className='pagination_btn'
+                                    onClick={() => handlePageChange(currentPage + 1)}
+                                    disabled={currentPage === Math.ceil(datas.length / cardsPerPage)}
+                                >{icons.Nexticon}</button>
                             </div>
                         </div>
                     </div>

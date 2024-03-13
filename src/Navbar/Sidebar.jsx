@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useState, useRef, useCallback, useMemo, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import './Sidebar.css'
 import { Dashboard } from '../components/Report/Dashboard/Dashboard';
@@ -11,27 +11,85 @@ import { CreateProfile } from '../components/Report/CreateProfile/CreateProfile'
 import { CustomSupport } from '../components/Report/CustomSupport/CustomSupport';
 import { Foot } from '../Footer/Foot';
 import OvalImage from '../assets/images/Oval.png'
+import Saved from '../assets/images/save.png'
+import Order from '../assets/images/order.png'
+import Payments from '../assets/images/payment.png'
+import Settings from '../assets/images/setting.png'
+import Creates from '../assets/images/create.png'
+import Messages from '../assets/images/message.png'
+import Close from '../assets/images/cross.png'
 import { icons } from '../Constant/Icons/Icons';
 
 export const Sidebar = () => {
 
-  const [activeTab, setActiveTab] = useState('dashboard');
+  const [activeTab, setActiveTab] = useState('findtalent');
+  const [shownotification, setShowNotification] = useState(false);
+  const [notificationVisible, setNotificationVisible] = useState({
+    notify1: true,
+    notify2: true,
+    notify3: true,
+    notif4: true,
+  });
 
   const navigate = useNavigate();
+
+  const handleCustomSupportClick = () => {
+    // Navigate to CustomSupport component
+    navigate('/customsupport');
+  };
 
   const handleTabChange = (tab) => {
     setActiveTab(tab);
   };
 
+  const handleCloseNotification = (id) => {
+    setNotificationVisible((prev) => ({
+      ...prev,
+      [id]: false,
+    }));
+  };
+
+  const handleToggleNotificationPanel = () => {
+    setShowNotification(prev => !prev);
+  };
+
+  // Memoized Notification component using useMemo
+  const MemoizedNotification = useMemo(() => {
+    return ({ id, title, description, color }) => (
+    <div className='notify_inner ps-3 pe-3 mb-1 pb-2' style={{ display: notificationVisible[id] ? 'block' : 'none' }}>
+      <div className='d-flex justify-content-between'>
+        <div className='d-flex gap-2 mt-3'>
+          <div className='noti-circle' style={{ background: color }}>
+            <div className='noti_inner_circle' style={{ color }}>
+              i
+            </div>
+          </div>
+          <div className='noti_style pt-1'>
+            {title}
+          </div>
+        </div>
+        <div className='mt-3'>
+          <button className='close_noti_btn' onClick={() => handleCloseNotification(id)}>
+            <img src={Close} alt="" />
+          </button>
+        </div>
+      </div>
+      <div className='notify_style ps-5'>
+        {description}
+      </div>
+    </div>
+  );
+}, [notificationVisible]);
+
   const tabData = [
-    { id: 'dashboard', label: 'Dashboard', icon: icons.DashboardIcon },
-    { id: 'findtalent', label: 'Find Talent', icon: icons.PersonOutline },
-    { id: 'saveprofile', label: 'Saved Profile', icon: icons.PersonOutline },
-    { id: 'orderhistory', label: 'Order History', icon: icons.NotepadIcon },
-    { id: 'payment', label: 'Payment', icon: icons.HandCoinsIcon },
-    { id: 'setting', label: 'Settings & Privacy', icon: icons.RiLockPasswordLine },
-    { id: 'profile', label: 'Create Profile', icon: icons.PersonOutline },
-    { id: 'custom', label: 'Customer Support', icon: icons.LiaSmsSolid },
+    { id: 'dashboard', label: 'Dashboard', icon: <div style={{ fontSize: "20px" }}>{icons.DashboardIcon}</div> },
+    { id: 'findtalent', label: 'Find Talent', icon: <div style={{ fontSize: "20px" }}>{icons.PersonOutline}</div> },
+    { id: 'saveprofile', label: 'Saved Profile', icon: <img src={Saved} alt="" /> },
+    { id: 'orderhistory', label: 'Order History', icon: <img src={Order} alt="" /> },
+    { id: 'payment', label: 'Payment', icon: <img src={Payments} alt="" /> },
+    { id: 'setting', label: 'Settings & Privacy', icon: <img src={Settings} alt="" /> },
+    { id: 'profile', label: 'Service Profile', icon: <img src={Creates} alt="" /> },
+    { id: 'custom', label: 'Customer Support', icon: <img src={Messages} alt="" /> },
   ];
 
   const MainLayout = () => {
@@ -64,21 +122,30 @@ export const Sidebar = () => {
               <div style={{ marginRight: '8px', color: "yellow", fontSize: "15px" }}>{icons.CrownIcon}</div>
               Join Now
             </button>
-            <div className='bell_icon'>{icons.BellFillIcon}</div>
-            <div className='bell_icon'>{icons.MessageRoundedDots}</div>
+            <div className='bell_icon' onClick={handleToggleNotificationPanel}>{icons.BellFillIcon}</div>
+            {shownotification && (
+              <div className='noti_body'>
+                <MemoizedNotification id="notify1" title="voice capture result" description="Lorem Ipsum is simply dummy text..." />
+                <MemoizedNotification id="notify2" title="Notification 2" color="#0C68E2" />
+                <MemoizedNotification id="notify3" title="Notification 3" color="#FFBF58" />
+                <MemoizedNotification id="notif4" title="Notification 4" color="#29E8C6" />
+              </div>
+            )}
+            <div className='bell_icon' onClick={handleCustomSupportClick}>
+              {icons.MessageRoundedDots}
+            </div>
             <img src={OvalImage} alt="" />
           </div>
         </div>
       </nav>
-
       {/* End of Navbar */}
 
       {/* Start of Sidebar */}
 
       <div className="container-fluid" >
         <div className="row ">
-          <div className="col-xxl-2 col-xl-2 col-lg-3 pt-4 d-lg-block d-md-none d-sm-none d-none sidebar sidebar_comp pb-5 p-0 ">
-            <div className='d-flex flex-column gap-3'>
+          <div className="col-xxl-2 col-xl-2 col-lg-3 d-lg-block d-md-none d-sm-none d-none sidebar pb-5 p-0 ">
+            <div className='d-flex flex-column gap-3 pt-4'>
               {tabData.map((tab) => (
                 <button
                   key={tab.id}
@@ -95,7 +162,7 @@ export const Sidebar = () => {
               </button>
             </div>
           </div>
-          <div className="col-xxl-10 col-xl-10 col-lg-9 col-md-12 col-sm-12 col-12 sidebar_comp dashboard_bg pb-5 p-0">
+          <div className="col-xxl-10 col-xl-10 col-lg-9 col-md-12 col-sm-12 col-12 sidebar_main pb-5 p-0">
             <MainLayout />
           </div>
         </div>

@@ -31,10 +31,10 @@ export const Footer = () => {
             <div className='curve_icon'>{icons.ArrowforwardIcon}</div>
           </div>
         </div>,
-        <div className='d-flex gap-5'>
-          <button className='multiple_icons' onClick={handleFacebookClick}>{icons.FacebookfIcon}</button>
-          <button className='multiple_icons' onClick={handleTwitterClick}>{icons.TwitterIcon}</button>
-          <button className='multiple_icons' onClick={handleInstagramClick}>{icons.InstagramIcon}</button>
+        <div className='d-flex gap-5 pt-2'>
+          <div className='multiple_icons' onClick={handleFacebookClick}>{icons.FacebookfIcon}</div>
+          <div className='multiple_icons' onClick={handleTwitterClick}>{icons.TwitterIcon}</div>
+          <div className='multiple_icons' onClick={handleInstagramClick}>{icons.InstagramIcon}</div>
         </div>
       ]
     },

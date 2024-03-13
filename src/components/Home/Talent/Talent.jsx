@@ -1,4 +1,4 @@
-import React, {useState, useEffect} from 'react'
+import React, { useState, useEffect } from 'react'
 import './Talent.css'
 import AOS from 'aos';
 import 'aos/dist/aos.css';
@@ -6,6 +6,7 @@ import Elipse_one from '../../../assets/images/Ellipse_one.png'
 import Elipse_two from '../../../assets/images/Ellipse_two.png'
 import Elipse_three from '../../../assets/images/Ellipse_three.png'
 import Elipse_four from '../../../assets/images/Ellipse_four.png'
+import Elipse_five from '../../../assets/images/Ellipse_five.png'
 import Wing from '../../../assets/images/pngwing.png'
 import { icons } from '../../../Constant/Icons/Icons'
 
@@ -13,14 +14,17 @@ export const Talent = () => {
 
     useEffect(() => {
         AOS.init({
-          offset: 300,
-          duration: 1000,
+            offset: 300,
+            duration: 1000,
         });
-      }, []); // Run this effect only once when the component mounts
+    }, []); // Run this effect only once when the component mounts
 
     return (
         <section>
-            <div className="container-fluid pt-5 pb-5 bg_landing">
+            <div className="container-fluid pt-5 pb-5 bg_landing p-0 position-relative">
+                <div className='position-absolute elipse_five_style'>
+                    <img src={Elipse_five} alt=""  />
+                </div>
                 <div className="container">
                     <div className="row" data-aos="fade-down">
                         <div className="col-xxl-12 col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12 position-relative">

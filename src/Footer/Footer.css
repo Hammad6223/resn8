@@ -83,6 +83,10 @@
     color: var(--whiteColor);
 }
 
+.voice_style:hover{
+    color: var(--primaryColor);
+}
+
 .for_talent {
     font-family: Poppins;
     font-size: 17px;
@@ -100,8 +104,16 @@
 .multiple_icons{
     color: var(--whiteColor);
     font-size: 20px;
-    border: none;
-    background: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.multiple_icons:hover{
+    width: 35px;
+    height: 35px;
+    border-radius: 30px;
+    background: var(--primaryColor);
 }
 
 @media (min-width: 576px) and (max-width: 768px) {

@@ -2,6 +2,7 @@ import React, { useState } from 'react'
 import { NavLink, useNavigate } from 'react-router-dom'
 import './Navbar.css'
 import { icons } from '../Constant/Icons/Icons';
+import Close from '../assets/images/x.png'
 import 'bootstrap/dist/js/bootstrap.bundle.min.js';
 
 export const Navbar = () => {
@@ -11,7 +12,7 @@ export const Navbar = () => {
   return (
     <>
       <nav className="navbar navbar-expand-lg">
-        <div className="container">
+        <div className="container p-0">
           <div className='header_content' onClick={() => navigate('/landing')}>
             Resn8
           </div>
@@ -40,9 +41,9 @@ export const Navbar = () => {
       </nav>
 
       <div className="offcanvas offcanvas-top" id="offcanvasTop" aria-labelledby="offcanvasTopLabel">
-        <div className='d-flex justify-content-end pe-5'>
+        <div className='d-flex justify-content-end pe-5 pt-4'>
           <button type="button" className='close_button' data-bs-dismiss="offcanvas" aria-label="Close">
-            <div className='btn_close_icon'>{icons.CloseIcon}</div>
+            <img src={Close} alt="" />
           </button>
         </div>
         <ul className="navbar-nav gap-5 mt-5">

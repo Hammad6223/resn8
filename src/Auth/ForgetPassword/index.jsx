@@ -1,55 +1,48 @@
 import { useState, useEffect, useContext } from "react"
 import './ForgetPassword.css'
+import { Modal } from 'react-bootstrap';
 import { icons } from "../../Constant/Icons/Icons";
+import Closebtn from '../../assets/images/x.png'
 
 export const ForgetPassword = () => {
 
   const [showModal, setShowModal] = useState(false);
 
-  const send = () => {
-    alert("Send Now");
-  }
+  const handleCloseModal = () => {
+    setShowModal(false);
+  };
 
   return (
     <>
-    <div className="d-flex justify-content-end">
-      <button className='forgot_btn' onClick={() => setShowModal(true)}>Forgot Password</button>
-      </div>
-      {showModal && (
-        <div className="modal fade show" tabIndex="-1">
-          <div className="modal-dialog modal-dialog-centered">
-            <div className="modal-content">
-              <div className="inner_dialog_box">
-                <div className="d-flex pt-2 gap-5">
-                  <div className="forgetP_styling">
-                    Forgot Password?
-                  </div>
-                  <button
-                    type="button"
-                    className="btn-close"
-                    onClick={() => setShowModal(false)}
-                    aria-label="Close"
-                  >
-                    <div className='btn_close_icon'>{icons.CloseIcon}</div>
-                  </button>
-                </div>
-                <p className="forget_content">Enter the email associated <br /> with your account</p>
-                <form action="">
-                  <div className='position-relative'>
-                    <span className='mail_icon'>
-                      {icons.MailIcon}
-                    </span>
-                    <input type="text" placeholder='Enter your email' className='forget_style_input' />
-                  </div>
-                </form>
-                <button className='forget_button' onClick={send}>
-                  Send
-                </button>
-              </div>
-            </div>
-          </div>
+      <div className="d-flex justify-content-end pt-3">
+        <div className='content_style' style={{ cursor: "pointer" }} onClick={() => setShowModal(true)}>
+          Forgot Password
         </div>
-      )}
+      </div>
+      <Modal show={showModal} style={{ background: "rgba(11, 2, 41, 0.9)" }}>
+        <div className="modal_forgot pb-3 ps-3 pe-3">
+          <div className="d-flex pt-3 gap-5">
+            <div className="forgetP_styling">
+              Forgot Password?
+            </div>
+            <button className='close_clone_btn' onClick={handleCloseModal}>
+              <img src={Closebtn} alt="" />
+            </button>
+          </div>
+          <p className="forget_content pt-2">Enter the email associated <br /> with your account</p>
+          <form action="">
+            <div className='position-relative pt-3'>
+              <span className='mail_icon'>
+                {icons.MailIcon}
+              </span>
+              <input type="text" placeholder='Enter your email' className='input_style ps-5' />
+            </div>
+          </form>
+          <button className='Sign_button_style content_style mt-3'>
+            Send
+          </button>
+        </div>
+      </Modal>
     </>
   )
 }

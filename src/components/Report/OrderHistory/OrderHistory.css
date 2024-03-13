@@ -6,6 +6,11 @@
     box-sizing: border-box;
 }
 
+.order_payment{
+    padding-top: 70px;
+    height: 105vh;
+}
+
 .month_btn {
     width: 100%;
     height: 42px;

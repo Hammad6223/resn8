@@ -6,6 +6,11 @@
     box-sizing: border-box;
 }
 
+.setting{
+    padding-top: 70px;
+    height: 135vh;
+}
+
 @media (min-width: 576px) and (max-width: 768px) {
     .New {
         margin-top: 1rem;

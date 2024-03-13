@@ -45,7 +45,7 @@ export const Trending = () => {
                     </div>
                     <div className="row mt-5" >
                         {data.map((item, index) => (
-                            <div className={`${index === 1 ? 'col-md-8 ho' : 'col-md-4 ho'} p-2`} key={index} style={{position: "relative"}} data-aos="fade-down">
+                            <div className={`${index === 1 ? 'col-md-8' : 'col-md-4'} p-2`} key={index} style={{position: "relative"}} data-aos="fade-down">
                                 <img src={item.image} alt="" style={{width:'100%'}}/>
                                 <div className={`${index === 1 ? 'card_image2' : 'card_image'}`} style={{color: "white"}}>
                                     <p className='trending_title'> {item.title}</p>

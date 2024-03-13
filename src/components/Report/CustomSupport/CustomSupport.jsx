@@ -67,7 +67,7 @@ export const CustomSupport = () => {
 
     return (
         <section>
-            <div className="container-fluid dashboard_bg pb-3">
+            <div className="container-fluid dashboard_bg custom_support pb-3">
                 <div className="container pt-4">
                 <div className="row">
                         <div className="col-xxl-9 col-xl-9 col-lg-11 col-md-11 col-sm-11 col-10">
